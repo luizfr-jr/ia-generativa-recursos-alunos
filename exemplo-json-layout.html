@@ -9,14 +9,11 @@
 </style>
 </head>
 <body><main class="wrap">
-<h1>Trocar o texto sem desmontar o cartaz</h1>
-<p class="intro">Este exemplo simula uma composição visual descrita em JSON. A versão da direita muda o conteúdo, mas reutiliza as mesmas caixas de posição e estilo. A comparação abaixo verifica os dados do layout.</p>
-<p><a href="./#secao-1">← Voltar ao guia</a></p><p><label>Novo título do cartaz <input id="texto" value="Preserve o layout." style="padding:8px"></label></p><div class="grid">
-<section class="panel"><h2>1. Composição original</h2><div class="poster" id="original"><i class="shape one"></i><i class="shape two"></i></div><p class="meta">Dados: <code>layoutOriginal</code></p></section>
-<section class="panel"><h2>2. Texto atualizado</h2><div class="poster" id="alterado"><i class="shape one"></i><i class="shape two"></i></div><p class="meta">Dados: <code>layoutAlterado</code> (conteúdo trocado)</p></section>
+<p><a href="./#secao-1">← Voltar ao guia</a></p><h1>Que título você daria ao cartaz?</h1><p class="intro">Os dois cartazes começam iguais. Digite outro título e veja sua versão mudar enquanto escreve.</p><p><label>Título da sua versão<br><input id="texto" value="Criar com IA" style="width:min(100%,32rem);padding:10px;font:inherit"></label></p><div class="grid">
+<section class="panel"><h2>Cartaz original</h2><div class="poster" id="original"><i class="shape one"></i><i class="shape two"></i></div></section>
+<section class="panel"><h2>Sua versão</h2><div class="poster" id="alterado"><i class="shape one"></i><i class="shape two"></i></div></section>
 </div>
-<div class="result" id="resultado" role="status"></div>
-<section class="method"><h2>O que o teste demonstra</h2><p>O script copia coordenadas e estilos dos elementos originais. Só muda os campos <code>content</code>. Assim, as caixas mantêm as mesmas posições e dimensões. O texto precisa caber no espaço reservado; JSON preserva os dados geométricos, mas não impede sozinho que uma frase longa fique apertada ou cortada.</p><p>Em um caso real, um modelo de visão estimaria a estrutura a partir da imagem. Aqui, os dados estão explícitos para conseguirmos isolar e testar a etapa de edição.</p></section>
+<p id="resultado" role="status"></p><details class="method"><summary>Ver o título no JSON</summary><p>A frase fica em <code>content</code>. Os valores de <code>box</code> indicam a posição e o tamanho da caixa em pixels no cartaz original.</p><pre id="dados" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
 
 </main>
 <script>
@@ -24,17 +21,13 @@ const layoutOriginal={
  canvas:{width:1200,height:675,background:"#102b46"},
  elements:[
   {id:"tag",type:"text",content:"AULA COMPLEMENTAR",box:{x:88,y:92,width:620,height:42},style:{color:"#ffd08c",fontSize:14,fontWeight:700}},
-  {id:"title",type:"text",content:"Crie com IA.\nMantenha sua ideia.",box:{x:88,y:190,width:770,height:180},style:{color:"#ffffff",fontSize:40,fontWeight:800}},
+  {id:"title",type:"text",content:"Criar com IA",box:{x:88,y:190,width:770,height:180},style:{color:"#ffffff",fontSize:40,fontWeight:800}},
   {id:"desc",type:"text",content:"Um ajuste pontual pode preservar a composição.",box:{x:90,y:408,width:690,height:70},style:{color:"#dceaf4",fontSize:17,fontWeight:400}},
   {id:"cta",type:"text",content:"EXPLORAR O TUTORIAL",box:{x:90,y:530,width:300,height:56},style:{color:"#102b46",fontSize:14,fontWeight:800,background:"#ffd08c"}}
  ]
 };
 // Criamos a cópia pelo JSON para simular salvar, recarregar e editar o objeto.
 const layoutAlterado=JSON.parse(JSON.stringify(layoutOriginal));
-layoutAlterado.elements.find(e=>e.id==="tag").content="TESTE DE EDIÇÃO";
-layoutAlterado.elements.find(e=>e.id==="title").content="Mude o texto.\nPreserve o layout.";
-layoutAlterado.elements.find(e=>e.id==="desc").content="As caixas continuam nas mesmas coordenadas.";
-layoutAlterado.elements.find(e=>e.id==="cta").content="VER O RESULTADO";
 function render(layout,targetId){
  const poster=document.getElementById(targetId);poster.style.background=layout.canvas.background;
  for(const item of layout.elements){
@@ -45,14 +38,20 @@ function render(layout,targetId){
   poster.appendChild(node);
  }
 }
-function sameLayout(a,b){return JSON.stringify(a.elements.map(e=>[e.id,e.box,e.style]))===JSON.stringify(b.elements.map(e=>[e.id,e.box,e.style]));}
 render(layoutOriginal,"original");render(layoutAlterado,"alterado");
-const result=document.getElementById("resultado");
-const passed=sameLayout(layoutOriginal,layoutAlterado);
-result.classList.toggle("fail",!passed);
-result.innerHTML=passed?"<strong>Resultado: layout preservado ✅</strong>As posições, dimensões e estilos dos quatro elementos são idênticos. Só o conteúdo foi alterado.":"<strong>Resultado: houve mudança no layout ❌</strong>As caixas dos elementos diferem.";
-console.assert(passed,"Os dados geométricos deveriam permanecer iguais.");
-const input=document.getElementById('texto');input.addEventListener('input',()=>{layoutAlterado.elements.find(e=>e.id==='title').content=input.value;document.querySelector('#alterado .title').textContent=input.value;});</script>
+const input=document.getElementById("texto");
+const title=layoutAlterado.elements.find(item=>item.id==="title");
+const node=document.querySelector("#alterado .title");
+function updateTitle(){
+  title.content=input.value;
+  node.textContent=title.content;
+  document.getElementById("dados").textContent=JSON.stringify({content:title.content,box:title.box},null,2);
+  const clipped=node.scrollHeight>node.clientHeight+1 || node.scrollWidth>node.clientWidth+1;
+  document.getElementById("resultado").textContent=clipped?"A frase ultrapassou a caixa do título. Experimente encurtá-la.":"";
+}
+input.addEventListener("input",updateTitle);
+window.addEventListener("resize",updateTitle);
+updateTitle();</script>
 </body>
 </html>
 
