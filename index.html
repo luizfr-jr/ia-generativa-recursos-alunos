@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07172f">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Ferramentas de IA | Trilha Formativa 1</title>
+<title>Guia da aula · IA generativa para profissionais</title>
 <style>
 :root{--navy:#07172f;--blue:#0b2d56;--orange:#f05a28;--ink:#12233b;--muted:#52647a;--paper:#f2f6fb;--line:#dce5f0}
 *{box-sizing:border-box}body{margin:0;background:#e9eff6;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;padding:34px}
@@ -25,10 +25,10 @@ h1 span{color:#ff7847}.subtitle{position:relative;z-index:1;color:#d1deec;font-s
 .note{margin:2px 0 0;color:#67788c;font-size:11px;line-height:1.4}.footer{background:#f0f4f8;padding:14px 42px;display:flex;justify-content:space-between;gap:12px;color:#66788d;font-size:11px}.footer b{color:#15385d}
 @media(max-width:700px){body{padding:12px}.hero{padding:35px 26px 31px}h1{font-size:34px}.content{padding:27px 20px}.grid{grid-template-columns:1fr}.card{min-height:0}.footer{padding:13px 20px;flex-direction:column}.subtitle{font-size:15px}}
 @media print{body{padding:0;background:white}.poster{width:100%;box-shadow:none;border-radius:0}.card{break-inside:avoid}}
-</style></head>
-<body><main class="poster">
-<header class="hero"><div class="brand"><i></i> UFN Digital · Pós em Desenvolvimento e Soluções com IA</div><h1>Caixa de ferramentas<br><span>de Inteligência Artificial</span></h1><p class="subtitle">Explore recursos para criar apresentações, imagens e vídeos, conversar com modelos de IA e descobrir novas ferramentas.</p><div class="course">TRILHA FORMATIVA 1 · APLICAÇÕES MULTIMODAIS</div></header>
-<section class="content">
+nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{color:#144e79}.lessons article{padding:clamp(20px,5vw,58px);max-width:850px;margin:auto;line-height:1.65;overflow-wrap:anywhere;border-top:1px solid var(--line)}article h2{font-size:clamp(26px,4vw,37px);line-height:1.15;color:var(--navy)}article h3{margin:2em 0 .5em;line-height:1.25;color:var(--blue)}pre{background:#10253c;color:#fff;padding:16px;overflow:auto;border-radius:9px;font-size:.86rem}blockquote{background:#f0f5fa;border-left:4px solid #cf542a;margin:1em 0;padding:8px 18px}button{border:1px solid #68829a;border-radius:6px;background:white;color:#103657;padding:7px 12px;cursor:pointer}article pre+button{margin-top:-8px}article :focus-visible,a:focus-visible{outline:3px solid #c8572b}</style></head>
+<body id="topo"><main class="poster">
+<header class="hero"><div class="brand"><i></i> UFN Digital · Pós em Desenvolvimento e Soluções com IA</div><h1>Guia da aula<br><span>IA generativa para profissionais</span></h1><p class="subtitle">Explore as ferramentas da aula e experimente quatro formas de usar referências visuais na criação de materiais.</p><div class="course">TRILHA FORMATIVA 1 · APLICAÇÕES MULTIMODAIS</div></header>
+<section class="content"><nav aria-label="Sumário"><h2 class="section-title">Roteiros de prática</h2><div class="grid"><a class="card" href="#secao-1"><b>1. Editar um cartaz com JSON</b></a><a class="card" href="#secao-2"><b>2. Aplicar o estilo de uma imagem a outra</b></a><a class="card" href="#secao-3"><b>3. Usar a identidade visual da marca</b></a><a class="card" href="#secao-4"><b>4. Padronizar slides no Gemini Notebook</b></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
 <div class="group"><h2 class="section-title">Comece por aqui</h2><a class="mainlink" href="https://luizfr-jr.github.io/meu-site-ia/" target="_blank" rel="noopener"><span><strong>Links de IAs para Alunos</strong><small>Página da disciplina com uma seleção de ferramentas de inteligência artificial.</small></span><b class="arrow">↗</b></a></div>
 <div class="group"><h2 class="section-title">Explore diretórios</h2><div class="grid">
 <a class="card" href="https://huggingface.co/spaces?category=language-translation" target="_blank" rel="noopener"><span class="cardhead"><span class="name">Hugging Face Spaces</span><b class="arrow">↗</b></span><span class="desc">Experimente aplicações de IA criadas pela comunidade, direto no navegador.</span></a>
@@ -46,8 +46,424 @@ h1 span{color:#ff7847}.subtitle{position:relative;z-index:1;color:#d1deec;font-s
 <a class="card" href="https://www.futurepedia.io/resources/ai-style-atlas/view" target="_blank" rel="noopener"><span class="cardhead"><span class="name">AI Style Atlas · Futurepedia</span><b class="arrow">↗</b></span><span class="desc">Compare 86 estilos visuais para vídeos explicativos e copie prompts para adaptar aos seus temas.</span></a>
 </div></div>
 <p class="note">Os recursos e limites de uso podem variar conforme a ferramenta e o tipo de conta.</p>
-</section><footer class="footer"><span><b>Disciplina:</b> Inteligência Artificial Generativa para profissionais</span><span>Material de apoio · UFN Digital</span></footer>
-</main></body></html>
+</section><div class="lessons"><article id="secao-1"><h2>1. Editar um cartaz com JSON</h2>
+
+<h3 id="o-que-voce-vai-aprender">O que você vai aprender</h3>
+<p>Ao concluir esta seção, você deverá conseguir:</p>
+<ul>
+<li>descrever os componentes visuais de uma imagem como dados organizados;</li>
+<li>pedir a um modelo de IA uma representação JSON da estrutura visual;</li>
+<li>conferir e corrigir esse JSON antes de usá-lo;</li>
+<li>separar conteúdo, posição e estilo;</li>
+<li>trocar um texto ou uma imagem sem reconstruir toda a composição.</li>
+</ul>
+<h3 id="a-ideia-central">A ideia central</h3>
+<p>Uma imagem comum contém pixels. Ela não guarda, necessariamente, camadas editáveis com nomes como “título”, “fundo” e “botão”. Portanto, quando pedimos a uma IA que “converta a imagem em JSON”, ela analisa o que aparece e produz uma <strong>descrição estruturada e aproximada</strong> da composição. O JSON é um mapa da imagem, não o arquivo original editável nem uma conversão perfeita.</p>
+<p>A qualidade do resultado depende da resolução, da clareza da imagem e da capacidade do modelo de reconhecer elementos. Posições, fontes e cores podem ser estimadas; confira esses dados antes de usá-los. O JSON é um formato de dados definido por uma especificação, e não uma linguagem de desenho por si só.</p>
+<h3 id="exemplo-mapear-um-card-de-1200-675-pixels">Exemplo: mapear um card de 1200 × 675 pixels</h3>
+<p>Imagine uma peça horizontal com fundo claro, um pequeno rótulo laranja, um título azul-escuro e um parágrafo. Para descrevê-la, dividimos a imagem em uma tela e elementos. Cada elemento recebe um identificador, conteúdo, caixa de posição e estilo.</p>
+<pre><code class="language-json">{
+  &quot;canvas&quot;: {
+    &quot;width&quot;: 1200,
+    &quot;height&quot;: 675,
+    &quot;background&quot;: &quot;#f3f6fb&quot;
+  },
+  &quot;elements&quot;: [
+    {
+      &quot;id&quot;: &quot;eyebrow&quot;,
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;content&quot;: &quot;AULA COMPLEMENTAR&quot;,
+      &quot;box&quot;: { &quot;x&quot;: 96, &quot;y&quot;: 78, &quot;width&quot;: 440, &quot;height&quot;: 38 },
+      &quot;style&quot;: {
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;,
+        &quot;fontSize&quot;: 18,
+        &quot;fontWeight&quot;: 700,
+        &quot;color&quot;: &quot;#f05a28&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;title&quot;,
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;content&quot;: &quot;Criar com IA com mais controle&quot;,
+      &quot;box&quot;: { &quot;x&quot;: 96, &quot;y&quot;: 150, &quot;width&quot;: 930, &quot;height&quot;: 100 },
+      &quot;style&quot;: {
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;,
+        &quot;fontSize&quot;: 52,
+        &quot;fontWeight&quot;: 700,
+        &quot;lineHeight&quot;: 1.05,
+        &quot;color&quot;: &quot;#0b2d56&quot;
+      }
+    },
+    {
+      &quot;id&quot;: &quot;description&quot;,
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;content&quot;: &quot;Transforme uma referência visual em dados e edite uma parte por vez.&quot;,
+      &quot;box&quot;: { &quot;x&quot;: 96, &quot;y&quot;: 285, &quot;width&quot;: 840, &quot;height&quot;: 72 },
+      &quot;style&quot;: {
+        &quot;fontFamily&quot;: &quot;Arial, sans-serif&quot;,
+        &quot;fontSize&quot;: 24,
+        &quot;fontWeight&quot;: 400,
+        &quot;lineHeight&quot;: 1.35,
+        &quot;color&quot;: &quot;#52647a&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>As coordenadas acima são medidas a partir do canto superior esquerdo da tela: <code>x</code> cresce para a direita e <code>y</code> cresce para baixo. <code>width</code> e <code>height</code> definem o tamanho da caixa do elemento. A estrutura separa o que pode mudar — como <code>content</code> — do que deve permanecer estável — como <code>box</code> e <code>style</code>.</p>
+<h3 id="passo-1-prepare-a-imagem-de-referencia">Passo 1 — Prepare a imagem de referência</h3>
+<ol>
+<li>Use a imagem original, com a maior resolução disponível.</li>
+<li>Anote ou confira as dimensões em pixels e a proporção. Neste exemplo, 1200 × 675 corresponde a 16:9.</li>
+<li>Identifique os elementos principais: fundo, títulos, textos, imagens, formas, margens e alinhamentos.</li>
+<li>Se houver texto pequeno ou borrado, informe que ele deve ser marcado como ilegível ou incerto, em vez de inventado.</li>
+</ol>
+<h3 id="passo-2-peca-uma-analise-estruturada">Passo 2 — Peça uma análise estruturada</h3>
+<p>Envie a imagem a uma ferramenta de IA com capacidade de analisá-la e use um pedido como este:</p>
+<blockquote>
+<p>Analise esta imagem como referência para reconstruir sua composição em HTML e CSS. Devolva somente um JSON válido, sem bloco Markdown e sem comentários. Inclua as dimensões da tela e uma lista ordenada de elementos. Para cada elemento, informe id, tipo, conteúdo visível, caixa x/y/width/height em pixels a partir do canto superior esquerdo, cor, família e tamanho aproximado da fonte, peso, alinhamento e ordem de sobreposição quando for possível inferir. Não invente texto ilegível: use null e liste a incerteza em um campo “uncertainties”. Preserve as posições relativas e a hierarquia visual. Não escreva o código ainda.</p>
+</blockquote>
+<p>A solicitação separa duas etapas: primeiro entender a referência; depois decidir como implementá-la. Isso facilita corrigir o mapa antes de gerar ou editar o código.</p>
+<h3 id="passo-3-confira-o-json">Passo 3 — Confira o JSON</h3>
+<p>Antes de usar a resposta:</p>
+<ul>
+<li>confira se o JSON está sintaticamente válido: chaves e aspas devem estar pareadas, e não pode haver vírgula sobrando no fim de uma lista;</li>
+<li>compare a largura, altura e proporção com a imagem de referência;</li>
+<li>confira se a ordem dos elementos segue a leitura visual;</li>
+<li>corrija coordenadas ou textos evidentes e marque como estimativas os valores incertos;</li>
+<li>mantenha uma cópia do JSON original antes de fazer alterações.</li>
+</ul>
+<p>Em JavaScript, <code>JSON.parse()</code> transforma uma string JSON válida em um objeto e lança um erro de sintaxe se o texto não obedecer à gramática esperada. Você pode usá-lo para detectar erros de formatação antes de renderizar a página.</p>
+<pre><code class="language-js">const layout = JSON.parse(jsonText);
+console.log(layout.canvas.width, layout.canvas.height);
+</code></pre>
+<h3 id="passo-4-separe-o-conteudo-da-apresentacao">Passo 4 — Separe o conteúdo da apresentação</h3>
+<p>O HTML define os elementos que aparecem. O CSS define a aparência e a posição. O JSON reúne os valores que queremos editar. Uma estrutura simples permite atualizar apenas o conteúdo de cada elemento identificado:</p>
+<pre><code class="language-html">&lt;div class=&quot;poster&quot; id=&quot;poster&quot;&gt;
+  &lt;p class=&quot;element&quot; id=&quot;eyebrow&quot;&gt;&lt;/p&gt;
+  &lt;h1 class=&quot;element&quot; id=&quot;title&quot;&gt;&lt;/h1&gt;
+  &lt;p class=&quot;element&quot; id=&quot;description&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.poster {
+  position: relative;
+  width: min(100%, 1200px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  container-type: inline-size;
+  background: #f3f6fb;
+}
+
+.element {
+  position: absolute;
+  margin: 0;
+}
+
+#eyebrow {
+  left: 8%;
+  top: 11.5%;
+  width: 36.7%;
+  height: 5.6%;
+  color: #f05a28;
+  font: 700 1.5cqw/1.2 Arial, sans-serif;
+}
+
+#title {
+  left: 8%;
+  top: 22.2%;
+  width: 77.5%;
+  height: 14.8%;
+  color: #0b2d56;
+  font: 700 4.3cqw/1.05 Arial, sans-serif;
+}
+
+#description {
+  left: 8%;
+  top: 42.2%;
+  width: 70%;
+  height: 10.7%;
+  color: #52647a;
+  font: 400 2cqw/1.35 Arial, sans-serif;
+}
+</code></pre>
+<pre><code class="language-js">function applyLayout(layout) {
+  document.querySelector(&quot;#poster&quot;).style.background = layout.canvas.background;
+
+  for (const item of layout.elements) {
+    const node = document.getElementById(item.id);
+    if (!node) continue;
+
+    node.textContent = item.content ?? &quot;&quot;;
+    node.style.left = `${(item.box.x / layout.canvas.width) * 100}%`;
+    node.style.top = `${(item.box.y / layout.canvas.height) * 100}%`;
+    node.style.width = `${(item.box.width / layout.canvas.width) * 100}%`;
+    node.style.height = `${(item.box.height / layout.canvas.height) * 100}%`;
+  }
+}
+
+applyLayout(layout);
+</code></pre>
+<p>Neste exemplo, o programa converte as posições em pixels para porcentagens da tela. A proporção 16:9 é mantida conforme o card muda de largura, e os elementos continuam ancorados nos mesmos pontos relativos.</p>
+<h3 id="passo-5-modifique-um-elemento-sem-deslocar-os-demais">Passo 5 — Modifique um elemento sem deslocar os demais</h3>
+<p>Suponha que queremos atualizar o título. A mudança deve ocorrer no campo <code>content</code> do elemento com id <code>title</code>; as coordenadas, o tamanho da caixa e o CSS permanecem iguais.</p>
+<p><strong>Antes</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;title&quot;,
+  &quot;content&quot;: &quot;Criar com IA com mais controle&quot;,
+  &quot;box&quot;: { &quot;x&quot;: 96, &quot;y&quot;: 150, &quot;width&quot;: 930, &quot;height&quot;: 100 }
+}
+</code></pre>
+<p><strong>Depois</strong></p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;title&quot;,
+  &quot;content&quot;: &quot;Editar com IA sem perder a composição&quot;,
+  &quot;box&quot;: { &quot;x&quot;: 96, &quot;y&quot;: 150, &quot;width&quot;: 930, &quot;height&quot;: 100 }
+}
+</code></pre>
+<p>A troca do texto não exige reposicionar o parágrafo ou reconstruir o card. Se a nova frase for mais longa e não couber, primeiro tente uma versão mais curta. Se isso não resolver, ajuste somente a caixa do título ou seu tamanho de fonte, verificando que os outros elementos continuem nos lugares originais.</p>
+<h3 id="como-pedir-a-ia-uma-alteracao-localizada">Como pedir à IA uma alteração localizada</h3>
+<p>Depois de conferir a estrutura e o código, use uma instrução com limites claros:</p>
+<blockquote>
+<p>Altere somente o conteúdo do elemento com id “title” para “Editar com IA sem perder a composição”. Preserve as coordenadas, as dimensões, as cores, a fonte, o fundo, a proporção da tela e todos os outros elementos. Não recrie o layout. Mostre quais campos foram alterados.</p>
+</blockquote>
+<p>Uma instrução específica reduz alterações acidentais, mas não garante que o modelo obedeça perfeitamente. Compare sempre o resultado com a referência.</p>
+<h3 id="lista-de-conferencia">Lista de conferência</h3>
+<p>Antes de considerar a alteração concluída:</p>
+<ul>
+<li>a tela continua com a mesma proporção da referência;</li>
+<li>o título, o texto de apoio e os elementos visuais continuam alinhados;</li>
+<li>nenhuma caixa foi movida sem necessidade;</li>
+<li>o novo texto não ficou cortado, sobreposto ou pequeno demais;</li>
+<li>cores, fontes e margens importantes foram preservadas;</li>
+<li>o JSON continua válido e o código carrega sem erros;</li>
+<li>o resultado foi comparado com a imagem original, lado a lado.</li>
+</ul>
+<h3 id="limites-e-cuidados">Limites e cuidados</h3>
+<ul>
+<li>A análise visual é uma estimativa: a IA pode não reconhecer a fonte exata, pequenos textos, espaçamentos ou transparências.</li>
+<li>Uma imagem achatada não contém as camadas originais. O JSON descreve uma estrutura provável, que pode ser ajustada manualmente.</li>
+<li>Alterar o texto pode mudar a quebra de linha. Reserve espaço suficiente ou edite a frase mantendo um comprimento parecido.</li>
+<li>Uma edição generativa feita diretamente sobre os pixels pode modificar elementos vizinhos. Quando a posição precisa permanecer previsível, prefira reconstruir a composição com elementos HTML/CSS ou camadas editáveis.</li>
+<li>Não use dados pessoais ou materiais com direitos restritos em ferramentas externas sem autorização.</li>
+</ul>
+<h3 id="atividade-pratica">Atividade prática</h3>
+<p>Escolha um card, slide ou cartaz simples que você possa usar como referência.</p>
+<ol>
+<li>Registre suas dimensões e proporção.</li>
+<li>Peça a uma IA para descrever a estrutura em JSON usando o prompt desta seção.</li>
+<li>Confira e corrija as caixas de três elementos: um rótulo, um título e um texto de apoio.</li>
+<li>Monte uma versão básica em HTML/CSS ou em uma ferramenta que permita editar camadas.</li>
+<li>Troque apenas o texto do título e compare as duas versões.</li>
+<li>Anote quais posições permaneceram iguais e qual ajuste foi necessário para evitar cortes.</li>
+</ol>
+<p><strong>Questão de reflexão:</strong> por que gerar uma nova imagem a cada alteração pode dificultar a preservação do layout, enquanto separar conteúdo, posição e estilo torna a edição mais controlável?</p>
+<h3 id="referencias-tecnicas">Referências técnicas</h3>
+<ul>
+<li><a href="https://www.rfc-editor.org/info/rfc8259/">RFC 8259 — The JavaScript Object Notation (JSON) Data Interchange Format</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse() — MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio">CSS aspect-ratio — MDN</a></li>
+</ul>
+<hr />
+<h3 id="exemplo-interativo-para-testar">Exemplo interativo para testar</h3>
+<p>Abra o <a href="exemplo-json-layout.html">exemplo de cartaz com JSON</a> no navegador. Ele apresenta a composição original e uma versão alterada lado a lado. No código, o layout é copiado e apenas o campo <code>content</code> de cada elemento é trocado; <code>box</code> e <code>style</code> são mantidos.</p>
+<p><strong>Resultado da verificação:</strong> as duas versões renderizam quatro elementos e mantêm iguais posições (<code>x</code> e <code>y</code>), dimensões (<code>width</code> e <code>height</code>) e estilos de cada elemento. O exemplo mostra que a separação entre conteúdo e geometria permite mudar o texto sem deslocar os elementos.</p>
+<p><strong>Limite observado:</strong> preservar as caixas não garante que qualquer texto caiba nelas. Uma frase mais comprida pode quebrar em mais linhas ou ser cortada. Nesse caso, encurte o texto ou ajuste de forma controlada a caixa ou a fonte, verificando novamente os demais elementos.</p>
+<p>Este é um teste controlado com um layout já descrito em JSON. Na conversão de uma imagem real, a etapa de análise visual ainda precisa estimar as caixas, os textos e os estilos; esses dados devem ser conferidos antes da edição.</p>
+<p>Abra o exemplo, escreva um novo título e veja se ele cabe na área reservada. Observe também se a descrição e o botão permanecem no lugar.</p>
+<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-2"><h2>2. Aplicar o estilo de uma imagem a outra</h2>
+<h3 id="a-ideia">A ideia</h3>
+<p>Nesta abordagem, não tentamos reconstruir a imagem de referência nem manter sua composição. Usamos a primeira imagem para descrever um <strong>estilo visual</strong> em JSON e aplicamos essa descrição a uma segunda imagem, que fornece o assunto ou conteúdo da imagem final.</p>
+<ul>
+<li><strong>Imagem de estilo:</strong> informa a aparência desejada — paleta, contraste, iluminação, textura, traço, atmosfera e tratamento visual.</li>
+<li><strong>Imagem de conteúdo:</strong> informa o que deve aparecer — pessoas, objetos, ambiente e, se desejado, composição geral.</li>
+<li><strong>JSON:</strong> funciona como uma ficha organizada de estilo. Ele não altera a imagem por conta própria; serve como especificação para orientar o pedido à ferramenta de geração ou edição.</li>
+</ul>
+<p>Por exemplo: a imagem de estilo pode ser uma ilustração editorial com cores suaves e textura de papel; a imagem de conteúdo pode ser uma fotografia de uma equipe em laboratório. O objetivo é gerar uma nova imagem da equipe com aquele tratamento gráfico, sem copiar a cena da imagem de estilo.</p>
+<h3 id="exemplo-de-ficha-de-estilo">Exemplo de ficha de estilo</h3>
+<p>A ficha abaixo é apenas um exemplo descritivo. Os valores devem ser preenchidos a partir de uma referência real e conferidos por uma pessoa.</p>
+<pre><code class="language-json">{
+  &quot;style_name&quot;: &quot;ilustração editorial suave&quot;,
+  &quot;palette&quot;: {
+    &quot;dominant&quot;: [&quot;azul petróleo&quot;, &quot;verde sálvia&quot;, &quot;creme&quot;],
+    &quot;accent&quot;: &quot;coral suave&quot;,
+    &quot;saturation&quot;: &quot;baixa a média&quot;
+  },
+  &quot;lighting&quot;: &quot;difusa, suave, sem sombras duras&quot;,
+  &quot;texture&quot;: &quot;grão fino semelhante a papel&quot;,
+  &quot;edges&quot;: &quot;formas simplificadas, contornos discretos&quot;,
+  &quot;contrast&quot;: &quot;baixo a médio&quot;,
+  &quot;mood&quot;: [&quot;acolhedor&quot;, &quot;didático&quot;, &quot;contemporâneo&quot;],
+  &quot;rendering&quot;: &quot;ilustração editorial com volumes simples&quot;,
+  &quot;avoid&quot;: [
+    &quot;copiar os objetos da imagem de estilo&quot;,
+    &quot;adicionar texto ou logotipos não solicitados&quot;,
+    &quot;mudar a quantidade de pessoas ou objetos principais da imagem de conteúdo&quot;
+  ]
+}
+</code></pre>
+<h3 id="fluxo-de-trabalho">Fluxo de trabalho</h3>
+<ol>
+<li>Escolha uma imagem de estilo e uma imagem de conteúdo. Identifique qual informação cada uma deve fornecer.</li>
+<li>Peça a um modelo com capacidade de analisar imagens para descrever somente as características visuais transferíveis da imagem de estilo em JSON. Não peça que copie os objetos ou a cena dessa referência.</li>
+<li>Revise a ficha: troque termos vagos por descrições observáveis, como “luz difusa” ou “textura de papel”, e remova características que não deseja aplicar.</li>
+<li>Envie a imagem de conteúdo junto da ficha e explique o que precisa permanecer reconhecível.</li>
+<li>Gere uma primeira versão, compare com as duas referências e ajuste a ficha ou as instruções em etapas.</li>
+<li>Confira se a ferramenta alterou acidentalmente elementos importantes, como quantidade de pessoas, objetos, detalhes clínicos, rótulos ou identidade visual.</li>
+</ol>
+<h3 id="prompt-para-aplicar-a-ficha">Prompt para aplicar a ficha</h3>
+<blockquote>
+<p>Use a imagem 1 somente como referência de estilo e a imagem 2 como referência de conteúdo. Aplique à imagem 2 as características descritas neste JSON: [inserir a ficha]. Preserve o assunto principal, a quantidade de pessoas e objetos importantes e a leitura geral da imagem 2. Não copie a cena, os objetos ou a composição específica da imagem 1. Não acrescente texto nem logotipos. Gere uma nova interpretação visual e informe quais aspectos do conteúdo podem ter sido alterados.</p>
+</blockquote>
+<p>Ferramentas de geração de imagem podem aceitar imagens junto com instruções em texto e realizar transformações de estilo; a documentação do Gemini, por exemplo, apresenta um fluxo de transferência de estilo com preservação da composição quando isso é pedido. O comportamento varia conforme a ferramenta, então o resultado precisa ser avaliado. <a href="https://ai.google.dev/gemini-api/docs/image-generation">Documentação oficial de geração e edição de imagens do Gemini</a></p>
+<h3 id="o-que-avaliar-no-resultado">O que avaliar no resultado</h3>
+<ul>
+<li>O estilo visual da referência foi percebido (paleta, iluminação, textura, contraste e tratamento)?</li>
+<li>O conteúdo importante da segunda imagem continua reconhecível?</li>
+<li>Elementos da imagem de estilo foram copiados por engano?</li>
+<li>O resultado acrescentou palavras, símbolos ou objetos que não foram pedidos?</li>
+<li>Quais características do JSON parecem ter sido obedecidas ou ignoradas?</li>
+</ul>
+<p><strong>Importante:</strong> esse processo não garante uma transferência perfeita. O JSON deixa a intenção mais explícita e permite editar a descrição por partes, mas o modelo de imagem ainda interpreta as instruções de forma probabilística. Para avaliar a técnica mencionada no vídeo, vale testar a mesma imagem de conteúdo com e sem a ficha JSON e comparar os resultados.</p>
+<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-3"><h2>3. Usar a identidade visual da marca</h2>
+<h3 id="objetivo">Objetivo</h3>
+<p>Usar um arquivo de identidade visual — como manual em PDF, apresentação de referência, arquivo de logotipo ou descrição escrita — para orientar a criação de peças diferentes sem perder a coerência da marca.</p>
+<p>A IA deve consultar o material fornecido como fonte. Se uma regra não estiver clara ou não aparecer no arquivo, deve sinalizar a dúvida em vez de inventar uma cor, uma fonte, uma versão do logotipo ou uma aplicação.</p>
+<h3 id="etapa-1-transforme-o-manual-em-uma-ficha-consultavel">Etapa 1 — Transforme o manual em uma ficha consultável</h3>
+<p>Envie o manual de marca e os arquivos oficiais disponíveis. Comece pedindo uma leitura estruturada, antes de solicitar as peças:</p>
+<blockquote>
+<p>Leia o arquivo de identidade visual anexado e os materiais oficiais da marca. Extraia somente regras que estejam explícitas nos arquivos e organize-as nesta ficha:</p>
+<ul>
+<li>nome da marca e forma de escrever;</li>
+<li>cores oficiais e códigos, se informados;</li>
+<li>fontes e hierarquia tipográfica, se informadas;</li>
+<li>versões e regras de aplicação do logotipo;</li>
+<li>margens, áreas de proteção e usos proibidos;</li>
+<li>estilo de fotografia, ilustração, ícones e formas;</li>
+<li>tom de voz e exemplos de linguagem;</li>
+<li>regras específicas para banners, slides ou redes sociais.</li>
+</ul>
+<p>Para cada regra, indique de qual arquivo e página ou trecho ela veio. Separe fatos explícitos de sugestões. Se a informação estiver ausente, escreva “não informado”; não deduza nem invente. Ao final, liste dúvidas que devo resolver antes de criar materiais.</p>
+</blockquote>
+<p>Revise a ficha e corrija qualquer leitura equivocada. Guarde-a junto dos arquivos oficiais; ela será a referência comum para os próximos pedidos. O resumo ajuda a reutilizar as regras, mas não substitui o manual original quando houver dúvida.</p>
+<h3 id="etapa-2-teste-a-ficha-em-pecas-diferentes">Etapa 2 — Teste a ficha em peças diferentes</h3>
+<p>Substitua os campos entre colchetes pelas informações da atividade. Anexe novamente a ficha, o manual e o arquivo oficial do logotipo ou dos elementos gráficos que a peça exigir.</p>
+<h4 id="prompt-a-banner">Prompt A — Banner</h4>
+<blockquote>
+<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, crie uma proposta de banner para [canal ou local de publicação].</p>
+<p><strong>Objetivo:</strong> [o que a peça deve comunicar].<br />
+<strong>Público:</strong> [para quem].<br />
+<strong>Texto obrigatório:</strong> [título, data, chamada ou link].<br />
+<strong>Formato:</strong> [largura × altura ou proporção].<br />
+<strong>Elementos que precisam aparecer:</strong> [itens].</p>
+<p>Aplique as regras da marca para cores, tipografia, logotipo, imagens, formas e tom de voz. Use o logotipo oficial fornecido sem redesenhá-lo, deformá-lo ou trocar suas cores. Não invente slogans, ícones proprietários ou elementos da identidade. Se algum requisito entrar em conflito com o manual, explique o conflito antes de propor uma solução. Antes de concluir, liste as regras da marca que aplicou e as que não conseguiu confirmar.</p>
+</blockquote>
+<h4 id="prompt-b-apresentacao">Prompt B — Apresentação</h4>
+<blockquote>
+<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, planeje uma apresentação de [número] slides sobre [tema], para [público], com o objetivo de <a href="#objetivo-1">objetivo</a>.</p>
+<p>Primeiro, apresente o roteiro slide a slide com título, mensagem principal e conteúdo essencial. Depois, proponha o sistema visual: capa, layouts de conteúdo, uso de imagens, gráficos, cores e tipografia, sempre de acordo com o manual. Mantenha consistência entre os slides e preserve boa legibilidade. Não invente dados nem altere o logotipo. Sinalize informações que estejam faltando. Ao final, faça uma checagem do roteiro e do sistema visual contra as regras da ficha.</p>
+</blockquote>
+<h4 id="prompt-c-outra-peca-cartaz-folheto-ou-publicacao-social">Prompt C — Outra peça (cartaz, folheto ou publicação social)</h4>
+<blockquote>
+<p>Crie uma proposta de [tipo de peça] para [canal ou contexto], destinada a [público], com a mensagem [mensagem principal] e a chamada para ação [CTA].</p>
+<p>Considere o formato [dimensões ou proporção] e os arquivos de identidade visual anexados. Use apenas cores, fontes, versões do logotipo e elementos gráficos autorizados no manual. Organize a informação para leitura rápida e mantenha o texto fornecido sem alterações, salvo se eu pedir uma revisão. Se o manual não especificar uma regra necessária, informe a lacuna em vez de inventar.</p>
+</blockquote>
+<h3 id="etapa-3-confira-a-consistencia">Etapa 3 — Confira a consistência</h3>
+<p>Para cada proposta, peça uma auditoria separada:</p>
+<blockquote>
+<p>Compare esta peça com a ficha e com o manual de identidade visual. Apresente uma tabela com: regra da marca, evidência no material de referência, como a peça atende à regra e status (atende, revisar ou não verificável). Confira especialmente logotipo, cores, tipografia, contraste, tom de voz e elementos não autorizados. Não considere uma regra atendida sem evidência. Termine com as correções prioritárias.</p>
+</blockquote>
+<p>A IA pode interpretar o manual de forma incompleta. Confira especialmente códigos de cor, fontes, margens e versões do logotipo. Quando a aplicação final depender de texto exato ou de um logotipo sem distorções, prefira inserir ou ajustar esses elementos no editor de apresentação ou de design usando os arquivos oficiais.</p>
+<h3 id="atividade-pratica-1">Atividade prática</h3>
+<ol>
+<li>Escolha um manual de marca ou uma identidade visual pública disponibilizada para estudo.</li>
+<li>Gere a ficha consultável e confira pelo menos cinco regras diretamente no arquivo original.</li>
+<li>Use a mesma ficha para solicitar um banner e uma capa de apresentação.</li>
+<li>Compare as peças: o que permaneceu coerente? O que variou? Alguma regra foi inventada ou ignorada?</li>
+<li>Faça a auditoria com o prompt da Etapa 3 e corrija as peças.</li>
+</ol>
+<p><strong>Pergunta para reflexão:</strong> como podemos manter uma identidade visual consistente em formatos diferentes sem obrigar todos os materiais a terem o mesmo layout?</p>
+<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-4"><h2>4. Padronizar slides no Gemini Notebook</h2>
+<h3 id="objetivo-1">Objetivo</h3>
+<p>Testar se uma ficha de identidade visual em JSON ajuda a manter uma linguagem visual coerente entre apresentações criadas no Studio do Gemini Notebook. O conteúdo deve vir das fontes do caderno; o JSON orienta a forma visual. O resultado é uma orientação para o modelo, não uma regra de diagramação executada com precisão garantida.</p>
+<h3 id="prepare-um-design-system-reutilizavel">1. Prepare um Design System reutilizável</h3>
+<p>O exemplo abaixo é um ponto de partida para a atividade. As cores são demonstrativas; antes de usar em materiais institucionais, substitua-as pelas cores oficiais da disciplina ou da instituição.</p>
+<pre><code class="language-json">{
+  &quot;design_system_apresentacoes&quot;: {
+    &quot;paleta&quot;: {
+      &quot;fundo_escuro&quot;: &quot;#0F172A&quot;,
+      &quot;azul_primario&quot;: &quot;#003366&quot;,
+      &quot;destaque&quot;: &quot;#F59E0B&quot;,
+      &quot;texto_claro&quot;: &quot;#FFFFFF&quot;,
+      &quot;fundo_claro&quot;: &quot;#F8FAFC&quot;,
+      &quot;texto_escuro&quot;: &quot;#172033&quot;
+    },
+    &quot;linguagem_visual&quot;: &quot;ilustração vetorial técnica, minimalista, com traços finos&quot;,
+    &quot;tipografia&quot;: &quot;sans-serif limpa; títulos curtos e destacados; corpo legível e conciso&quot;,
+    &quot;composicao&quot;: {
+      &quot;hierarquia&quot;: &quot;uma mensagem principal por slide&quot;,
+      &quot;espaco&quot;: &quot;áreas de respiro amplas&quot;,
+      &quot;organizacao&quot;: &quot;diagramas esquemáticos e cartões de conteúdo&quot;,
+      &quot;variacao&quot;: &quot;alternar layouts sem perder a hierarquia e a paleta&quot;
+    },
+    &quot;imagens&quot;: [
+      &quot;preferir diagramas e ilustrações pertinentes ao conteúdo&quot;,
+      &quot;evitar fotografias genéricas e decoração sem função&quot;
+    ],
+    &quot;regras&quot;: [
+      &quot;manter contraste suficiente entre texto e fundo&quot;,
+      &quot;não inventar logotipos, selos ou dados&quot;,
+      &quot;usar as fontes do caderno para afirmações factuais&quot;
+    ]
+  }
+}
+</code></pre>
+<p>Guarde a mesma ficha para reutilizá-la. Se preferir deixá-la disponível no caderno, cole-a nas instruções do caderno, quando essa opção estiver disponível, ou salve-a em um arquivo Markdown e adicione-o como fonte. Para gerar cada apresentação, inclua também a ficha no prompt de personalização do Slide Deck: isso torna explícita a referência visual daquela geração.</p>
+<h3 id="configure-as-instrucoes-do-caderno">2. Configure as instruções do caderno</h3>
+<p>No Gemini Notebook, procure as configurações ou instruções do caderno e adicione uma orientação permanente como esta:</p>
+<blockquote>
+<p>Atue como designer instrucional. Ao preparar apresentações, use as fontes do caderno para o conteúdo e consulte o Design System em JSON fornecido como referência visual. Mantenha uma hierarquia clara, texto conciso, bom contraste e consistência de paleta e linguagem gráfica. Não invente logotipos nem dados. Se alguma regra visual não puder ser aplicada ou não estiver clara, sinalize isso.</p>
+</blockquote>
+<p>A opção de conversa <strong>Personalizado</strong>, se disponível na interface, pode ajudar a definir a persona e o estilo das respostas no chat. Não presuma que essa preferência, sozinha, controle todas as escolhas do Studio. Por isso, repita o JSON no prompt do Slide Deck.</p>
+<h3 id="gere-o-slide-deck-com-o-json">3. Gere o Slide Deck com o JSON</h3>
+<ol>
+<li>Abra o caderno que contém as fontes da aula ou do módulo.</li>
+<li>No painel <strong>Studio</strong>, escolha <strong>Slide Deck</strong> e abra a personalização pelo ícone de lápis.</li>
+<li>Selecione o formato (slides para apresentar ou deck detalhado), o idioma, a extensão e as fontes apropriadas.</li>
+<li>Escreva o objetivo e o público da apresentação. Cole o Design System em JSON no campo de instrução visual.</li>
+<li>Se a interface oferecer revisão do roteiro ou das notas antes da renderização, revise a sequência e corrija o conteúdo antes de gerar os slides.</li>
+<li>Para uma segunda aula, use novamente o mesmo JSON, mas altere tema, público ou objetivo conforme necessário.</li>
+</ol>
+<p><strong>Prompt para testar:</strong></p>
+<blockquote>
+<p>Crie um Slide Deck sobre [tema], para [público], com o objetivo de <a href="#objetivo-1">objetivo</a>. Baseie as afirmações nas fontes selecionadas do caderno e não acrescente dados sem suporte. Aplique o Design System abaixo como referência visual para paleta, hierarquia, composição e linguagem gráfica. Mantenha uma mensagem principal por slide, texto legível e diagramas pertinentes. Não invente logotipos ou selos.</p>
+<p>[Cole aqui o JSON do Design System.]</p>
+<p>Antes de gerar, proponha uma sequência de slides com título e mensagem principal de cada um, se a opção de revisão estiver disponível.</p>
+</blockquote>
+<h3 id="compare-e-verifique">4. Compare e verifique</h3>
+<p>Para testar se a ficha ajuda, crie duas versões a partir do mesmo conteúdo e formato: uma com a instrução padrão e outra com o JSON. Depois, use a mesma ficha em uma apresentação sobre outro tema. Compare os resultados lado a lado.</p>
+<ul>
+<li>A paleta e a linguagem gráfica permanecem reconhecíveis entre as apresentações?</li>
+<li>A hierarquia visual é semelhante, mesmo quando o layout dos slides varia?</li>
+<li>As ilustrações ajudam a explicar o conteúdo ou são apenas decorativas?</li>
+<li>O texto factual está sustentado pelas fontes selecionadas?</li>
+<li>Surgiram logotipos, dados, cores ou elementos que não foram fornecidos?</li>
+<li>Quais regras do JSON foram seguidas, parcialmente seguidas ou ignoradas?</li>
+</ul>
+<p>Registre exemplos concretos de slides para cada conclusão. Se uma cor exata, uma fonte específica ou o uso correto de um logotipo for obrigatório, confira o arquivo exportado e finalize esses elementos em um editor de apresentações com os ativos oficiais. Apresentações geradas por IA podem conter falhas visuais ou factuais; revise o material antes de usar ou compartilhar. <a href="https://support.google.com/gemininotebook/answer/16757456?hl=pt-BR">Ajuda oficial: gerar e personalizar Slide Decks</a> · <a href="https://support.google.com/gemini/answer/16972047?hl=pt-BR">Ajuda oficial: instruções e configurações de cadernos</a></p>
+<h3 id="atividade-pratica-10-a-15-minutos">Atividade prática (10 a 15 minutos)</h3>
+<ol>
+<li>Escolha fontes de um tema que já esteja no caderno.</li>
+<li>Gere uma primeira apresentação com as opções padrão e guarde o resultado.</li>
+<li>Gere uma segunda versão do mesmo tema, incluindo o JSON no prompt de personalização.</li>
+<li>Gere uma apresentação de outro tema usando a mesma ficha.</li>
+<li>Compare as três versões pela paleta, hierarquia, linguagem gráfica, legibilidade e fidelidade às fontes. Registre uma evidência e uma limitação do método.</li>
+</ol>
+<p><strong>Conclusão esperada:</strong> o JSON pode tornar as instruções de estilo mais claras e reutilizáveis. O teste deve mostrar em que medida o Gemini Notebook mantém a consistência e quais ajustes ainda exigem revisão humana.</p>
+<p><strong>Pergunta para reflexão:</strong> que partes da identidade visual podem ser descritas bem em JSON e quais precisam ser ajustadas manualmente no arquivo final?</p>
+
+
+<a href="#topo">Voltar ao sumário ↑</a></article></div><footer class="footer"><span><b>Disciplina:</b> Inteligência Artificial Generativa para profissionais</span><span>Material de apoio · UFN Digital</span></footer>
+</main><script>document.querySelectorAll('article blockquote,article pre').forEach(block=>{const b=document.createElement('button');b.textContent=block.matches('pre')?'Copiar código':'Copiar prompt';block.after(b);b.onclick=async()=>{try{await navigator.clipboard.writeText(block.innerText);const label=b.textContent;b.textContent='Copiado';setTimeout(()=>b.textContent=label,1500)}catch{const r=document.createRange();r.selectNodeContents(block);const s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleção pronta para copiar'}}});</script></body></html>
 
 
 
