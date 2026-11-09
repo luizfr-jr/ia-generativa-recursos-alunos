@@ -1,58 +1,29 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Exemplo: JSON e preservação de layout</title><link rel="icon" href="/favicon.svg">
-<style>
-:root{font-family:Inter,Arial,sans-serif;color:#102b46;background:#f4f7fb}*{box-sizing:border-box}body{margin:0;padding:32px 20px 48px}.wrap{max-width:1120px;margin:auto}h1{font-size:clamp(1.6rem,4vw,2.5rem);margin:0 0 8px}.intro{color:#52647a;line-height:1.6;max-width:780px;margin:0 0 26px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.panel{background:white;padding:16px;border:1px solid #dce5ef;border-radius:18px;box-shadow:0 12px 30px #173b5b0d}.panel h2{font-size:1rem;margin:0 0 12px}.poster{position:relative;aspect-ratio:16/9;width:100%;container-type:inline-size;overflow:hidden;border-radius:12px;background:#102b46}.shape{position:absolute;border-radius:50%;background:#1d5273}.shape.one{width:31%;aspect-ratio:1;right:-8%;top:-22%;opacity:.8}.shape.two{width:19%;aspect-ratio:1;right:12%;bottom:-16%;background:#f1a45d}.el{position:absolute;margin:0;white-space:pre-wrap;overflow:hidden}.tag{color:#ffd08c;font-size:clamp(8px,1.05cqw,13px);font-weight:700;letter-spacing:.14em}.title{color:#fff;font-size:clamp(18px,3.35cqw,42px);line-height:1.05;font-weight:800;letter-spacing:-.035em}.desc{color:#dceaf4;font-size:clamp(10px,1.42cqw,17px);line-height:1.35}.cta{display:grid;place-items:center;color:#102b46;background:#ffd08c;border-radius:999px;font-size:clamp(9px,1.13cqw,14px);font-weight:800}.meta{margin:12px 2px 0;font-size:.83rem;color:#52647a}.result{margin-top:20px;padding:16px 18px;border-radius:14px;background:#e7f6ed;color:#14532d;line-height:1.5}.result strong{display:block;margin-bottom:4px}.result.fail{background:#fff0ed;color:#8b2418}.method{margin-top:24px;background:#fff;border:1px solid #dce5ef;border-radius:16px;padding:18px}.method h2{font-size:1.05rem;margin:0 0 8px}.method p{line-height:1.6;margin:6px 0;color:#40566b}.method code{background:#eef3f8;padding:2px 5px;border-radius:4px}.foot{color:#64748b;font-size:.84rem;margin-top:18px}@media(max-width:700px){.grid{grid-template-columns:1fr}body{padding:24px 14px}}
-</style>
-</head>
-<body><main class="wrap">
-<p><a href="./#secao-1">← Voltar ao guia</a></p><h1>Que título você daria ao cartaz?</h1><p class="intro">Os dois cartazes começam iguais. Digite outro título e veja sua versão mudar enquanto escreve.</p><p><label>Título da sua versão<br><input id="texto" value="Criar com IA" style="width:min(100%,32rem);padding:10px;font:inherit"></label></p><div class="grid">
-<section class="panel"><h2>Cartaz original</h2><div class="poster" id="original"><i class="shape one"></i><i class="shape two"></i></div></section>
-<section class="panel"><h2>Sua versão</h2><div class="poster" id="alterado"><i class="shape one"></i><i class="shape two"></i></div></section>
-</div>
-<p id="resultado" role="status"></p><details class="method"><summary>Ver o título no JSON</summary><p>A frase fica em <code>content</code>. Os valores de <code>box</code> indicam a posição e o tamanho da caixa em pixels no cartaz original.</p><pre id="dados" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
-
-</main>
-<script>
-const layoutOriginal={
- canvas:{width:1200,height:675,background:"#102b46"},
- elements:[
-  {id:"tag",type:"text",content:"AULA COMPLEMENTAR",box:{x:88,y:92,width:620,height:42},style:{color:"#ffd08c",fontSize:14,fontWeight:700}},
-  {id:"title",type:"text",content:"Criar com IA",box:{x:88,y:190,width:770,height:180},style:{color:"#ffffff",fontSize:40,fontWeight:800}},
-  {id:"desc",type:"text",content:"Um ajuste pontual pode preservar a composição.",box:{x:90,y:408,width:690,height:70},style:{color:"#dceaf4",fontSize:17,fontWeight:400}},
-  {id:"cta",type:"text",content:"EXPLORAR O TUTORIAL",box:{x:90,y:530,width:300,height:56},style:{color:"#102b46",fontSize:14,fontWeight:800,background:"#ffd08c"}}
- ]
-};
-// Criamos a cópia pelo JSON para simular salvar, recarregar e editar o objeto.
-const layoutAlterado=JSON.parse(JSON.stringify(layoutOriginal));
-function render(layout,targetId){
- const poster=document.getElementById(targetId);poster.style.background=layout.canvas.background;
- for(const item of layout.elements){
-  const node=document.createElement(item.id==="title"?"h2":"div");node.className="el "+item.id;node.textContent=item.content;
-  const b=item.box,s=item.style;node.style.left=(b.x/layout.canvas.width*100)+"%";node.style.top=(b.y/layout.canvas.height*100)+"%";node.style.width=(b.width/layout.canvas.width*100)+"%";node.style.height=(b.height/layout.canvas.height*100)+"%";
-  node.style.color=s.color;node.style.fontWeight=s.fontWeight;
-  if(item.id==="cta")node.style.background=s.background;
-  poster.appendChild(node);
- }
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.svg"><title>Atualizar um convite | Guia da aula</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f7fa;color:#122d48;font:1rem/1.5 "Segoe UI",sans-serif}main{max-width:1140px;margin:auto;padding:28px 5vw 60px}a{color:#174f77}h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;margin-bottom:.5rem}h2{font-size:1.2rem;margin-top:0}.grid{display:grid;grid-template-columns:minmax(235px,2fr) 3fr;gap:24px;align-items:start}section,details{background:white;border:1px solid #d9e3eb;padding:20px;border-radius:14px;margin:12px 0}label{display:block;font-weight:650;margin:0 0 12px}input,textarea{display:block;width:100%;font:inherit;padding:9px;border:1px solid #8da2b4;border-radius:6px;color:inherit}canvas{width:100%;height:auto;display:block}button{font:inherit;background:#133955;color:white;border:0;border-radius:6px;padding:9px 16px;cursor:pointer;margin-top:10px}button:disabled{opacity:.45}pre{white-space:pre-wrap;overflow-wrap:anywhere}summary{cursor:pointer}#changes{padding-left:20px}textarea{min-height:98px} @media(max-width:740px){.grid{display:block}}</style></head><body><main><a href="./#secao-1">← Voltar ao guia</a><h1>Atualizar um convite</h1><p>O convite da oficina passada já está preenchido. Para experimentar, marque a próxima edição para <b>19 de novembro, às 18h, na sala 204</b>. Ou use os dados de um encontro seu.</p><div class="grid"><section><h2>Dados do encontro</h2><form id="fields"><label>Nome do encontro<input name="evento" maxlength="65" value="Oficina de escrita científica" required></label><label>Data<input type="date" name="data" value="2026-11-12" required></label><label>Horário<input type="time" name="hora" value="17:00" required></label><label>Local ou canal<input name="local" maxlength="80" value="Sala 102" required></label></form><h2>O que mudou</h2><ul id="changes"></ul></section><section><h2>Seu convite</h2><canvas width="1200" height="675" aria-label="Prévia do convite, com descrição em texto abaixo"></canvas><button id="download">Baixar convite em PNG</button><p><label>Mensagem para enviar junto<textarea readonly id="message"></textarea></label><button id="copy">Copiar mensagem</button></p><small id="status" role="status"></small></section></div><details><summary>Ver os dados do convite em JSON</summary><p>O cartaz e a mensagem usam estes mesmos quatro campos. Você pode copiá-los para descrever outra edição à sua ferramenta de IA.</p><pre id="json"></pre></details></main><script>
+const form=document.querySelector('form'), canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const fields=()=>Object.fromEntries([...new FormData(form)].map(([k,v])=>[k,v.trim()]));
+const original=fields(), labels={evento:'Nome',data:'Data',hora:'Horário',local:'Local'};
+const display=(k,v)=>k==='data'?v.split('-').reverse().join('/'):v;
+const el=id=>document.getElementById(id);
+function line(value,x,y,width,size,color,bold=false){ctx.font=(bold?'bold ':'')+size+'px Arial';ctx.fillStyle=color;ctx.fillText(value,x,y,width)}
+function refresh(){
+ const d=fields(), valid=Object.values(d).every(Boolean);
+ ctx.fillStyle='#102d49';ctx.fillRect(0,0,1200,675);ctx.fillStyle='#ffb775';ctx.fillRect(72,75,78,8);
+ line('CONVITE',72,147,1040,30,'#ffcf99',true);
+ const words=d.evento.split(/\s+/);ctx.font='bold 62px Arial';let first='',rest='';
+ for(const word of words){if(!rest&&ctx.measureText((first+' '+word).trim()).width<1056)first=(first+' '+word).trim();else rest=(rest+' '+word).trim()}
+ line(first||rest,72,264,1056,62,'#fff',true);if(first&&rest)line(rest,72,337,1056,62,'#fff',true);
+ ctx.fillStyle='#50708b';ctx.fillRect(72,399,1056,2);
+ line('DATA E HORÁRIO',72,465,1000,23,'#ffcf99',true);line(display('data',d.data)+'   ·   '+d.hora,72,525,1056,45,'#fff');
+ line(d.local,72,605,1056,40,'#e3ebf3');
+ el('message').value=valid?'Você está convidado(a) para '+d.evento+'!\n'+display('data',d.data)+', às '+d.hora+' · '+d.local+'.':'';
+ el('json').textContent=JSON.stringify(d,null,2);
+ const changes=Object.keys(d).filter(k=>d[k]!==original[k]);el('changes').replaceChildren();
+ for(const text of (changes.length?changes.map(k=>labels[k]+': '+display(k,original[k])+' → '+(display(k,d[k])||'em branco')):['Os dados ainda são os da edição anterior.'])){const li=document.createElement('li');li.textContent=text;el('changes').append(li)}
+ el('download').disabled=el('copy').disabled=!valid;el('status').textContent=valid?'':'Preencha os quatro campos para baixar ou copiar.';
 }
-render(layoutOriginal,"original");render(layoutAlterado,"alterado");
-const input=document.getElementById("texto");
-const title=layoutAlterado.elements.find(item=>item.id==="title");
-const node=document.querySelector("#alterado .title");
-function updateTitle(){
-  title.content=input.value;
-  node.textContent=title.content;
-  document.getElementById("dados").textContent=JSON.stringify({content:title.content,box:title.box},null,2);
-  const clipped=node.scrollHeight>node.clientHeight+1 || node.scrollWidth>node.clientWidth+1;
-  document.getElementById("resultado").textContent=clipped?"A frase ultrapassou a caixa do título. Experimente encurtá-la.":"";
-}
-input.addEventListener("input",updateTitle);
-window.addEventListener("resize",updateTitle);
-updateTitle();</script>
-</body>
-</html>
-
-
+form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('input',refresh);refresh();
+el('download').onclick=()=>{const a=document.createElement('a');a.download='convite-'+fields().data+'.png';a.href=canvas.toDataURL('image/png');a.click()};
+el('copy').onclick=async()=>{try{await navigator.clipboard.writeText(el('message').value);el('status').textContent='Mensagem copiada.'}catch{el('message').select();el('status').textContent='Texto selecionado para copiar.'}};
+</script></body></html>
