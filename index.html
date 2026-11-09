@@ -28,7 +28,7 @@ h1 span{color:#ff7847}.subtitle{position:relative;z-index:1;color:#d1deec;font-s
 nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{color:#144e79}.lessons article{padding:clamp(20px,5vw,58px);max-width:850px;margin:auto;line-height:1.65;overflow-wrap:anywhere;border-top:1px solid var(--line)}article h2{font-size:clamp(26px,4vw,37px);line-height:1.15;color:var(--navy)}article h3{margin:2em 0 .5em;line-height:1.25;color:var(--blue)}pre{background:#10253c;color:#fff;padding:16px;overflow:auto;border-radius:9px;font-size:.86rem}blockquote{background:#f0f5fa;border-left:4px solid #cf542a;margin:1em 0;padding:8px 18px}button{border:1px solid #68829a;border-radius:6px;background:white;color:#103657;padding:7px 12px;cursor:pointer}article pre+button{margin-top:-8px}article :focus-visible,a:focus-visible{outline:3px solid #c8572b}</style></head>
 <body id="topo"><main class="poster">
 <header class="hero"><div class="brand"><i></i> UFN Digital · Pós em Desenvolvimento e Soluções com IA</div><h1>Material de apoio<br><span>IA generativa para profissionais</span></h1><p class="subtitle">Todo o material é opcional e não vale nota. Consulte os links e exemplos na ordem que preferir. Se quiser experimentar um prompt, use um tema do seu interesse. Não há entrega.</p><div class="course">TRILHA FORMATIVA 1 · APLICAÇÕES MULTIMODAIS</div></header>
-<section class="content"><nav aria-label="Sumário"><h2 class="section-title">Temas para consulta</h2><div class="grid"><a class="card" href="#secao-2"><b>1. Aplicar o estilo de uma imagem a outra</b><span class="desc">Como ficaria uma foto sua com as cores e a textura de uma ilustração? Escolha uma referência e experimente o prompt.</span></a><a class="card" href="#secao-3"><b>2. Usar a identidade visual da marca</b><span class="desc">Do banner à apresentação, o que faz uma marca ser reconhecida? Use um manual de marca para experimentar os dois formatos.</span></a><a class="card" href="#secao-4"><b>3. Padronizar slides no Gemini Notebook</b><span class="desc">Experimente o mesmo guia de estilo em duas aulas diferentes e descubra quais escolhas visuais se repetem nos slides.</span></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
+<section class="content"><nav aria-label="Sumário"><h2 class="section-title">Temas para consulta</h2><div class="grid"><a class="card" href="#secao-2"><b>1. Dar outro estilo a uma foto usando JSON</b><span class="desc">Transforme uma foto em ilustração e guarde a ficha de estilo para usar em outras imagens. Siga o passo a passo com dois prompts prontos.</span></a><a class="card" href="#secao-3"><b>2. Usar a identidade visual da marca</b><span class="desc">Do banner à apresentação, o que faz uma marca ser reconhecida? Use um manual de marca para experimentar os dois formatos.</span></a><a class="card" href="#secao-4"><b>3. Padronizar slides no Gemini Notebook</b><span class="desc">Experimente o mesmo guia de estilo em duas aulas diferentes e descubra quais escolhas visuais se repetem nos slides.</span></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
 <div class="group"><h2 class="section-title">Comece por aqui</h2><a class="mainlink" href="https://luizfr-jr.github.io/meu-site-ia/" target="_blank" rel="noopener"><span><strong>Links de IAs para Alunos</strong><small>Página da disciplina com uma seleção de ferramentas de inteligência artificial.</small></span><b class="arrow">↗</b></a></div>
 <div class="group"><h2 class="section-title">Explore diretórios</h2><div class="grid">
 <a class="card" href="https://huggingface.co/spaces?category=language-translation" target="_blank" rel="noopener"><span class="cardhead"><span class="name">Hugging Face Spaces</span><b class="arrow">↗</b></span><span class="desc">Experimente aplicações de IA criadas pela comunidade, direto no navegador.</span></a>
@@ -46,61 +46,31 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <a class="card" href="https://www.futurepedia.io/resources/ai-style-atlas/view" target="_blank" rel="noopener"><span class="cardhead"><span class="name">AI Style Atlas · Futurepedia</span><b class="arrow">↗</b></span><span class="desc">Compare 86 estilos visuais para vídeos explicativos e copie prompts para adaptar aos seus temas.</span></a>
 </div></div>
 <p class="note">Os recursos e limites de uso podem variar conforme a ferramenta e o tipo de conta.</p>
-</section><div class="lessons"><article id="secao-2"><h2>1. Aplicar o estilo de uma imagem a outra</h2>
-<h3 id="a-ideia">A ideia</h3>
-<p>Nesta abordagem, não tentamos reconstruir a imagem de referência nem manter sua composição. Usamos a primeira imagem para descrever um <strong>estilo visual</strong> em JSON e aplicamos essa descrição a uma segunda imagem, que fornece o assunto ou conteúdo da imagem final.</p>
-<ul>
-<li><strong>Imagem de estilo:</strong> informa a aparência desejada — paleta, contraste, iluminação, textura, traço, atmosfera e tratamento visual.</li>
-<li><strong>Imagem de conteúdo:</strong> informa o que deve aparecer — pessoas, objetos, ambiente e, se desejado, composição geral.</li>
-<li><strong>JSON:</strong> funciona como uma ficha organizada de estilo. Ele não altera a imagem por conta própria; serve como especificação para orientar o pedido à ferramenta de geração ou edição.</li>
-</ul>
-<p>Por exemplo: a imagem de estilo pode ser uma ilustração editorial com cores suaves e textura de papel; a imagem de conteúdo pode ser uma fotografia de uma equipe em laboratório. O objetivo é gerar uma nova imagem da equipe com aquele tratamento gráfico, sem copiar a cena da imagem de estilo.</p>
-<h3 id="exemplo-de-ficha-de-estilo">Exemplo de ficha de estilo</h3>
-<p>A ficha abaixo é apenas um exemplo descritivo. Os valores devem ser preenchidos a partir de uma referência real e conferidos por uma pessoa.</p>
-<pre><code class="language-json">{
-  &quot;style_name&quot;: &quot;ilustração editorial suave&quot;,
-  &quot;palette&quot;: {
-    &quot;dominant&quot;: [&quot;azul petróleo&quot;, &quot;verde sálvia&quot;, &quot;creme&quot;],
-    &quot;accent&quot;: &quot;coral suave&quot;,
-    &quot;saturation&quot;: &quot;baixa a média&quot;
-  },
-  &quot;lighting&quot;: &quot;difusa, suave, sem sombras duras&quot;,
-  &quot;texture&quot;: &quot;grão fino semelhante a papel&quot;,
-  &quot;edges&quot;: &quot;formas simplificadas, contornos discretos&quot;,
-  &quot;contrast&quot;: &quot;baixo a médio&quot;,
-  &quot;mood&quot;: [&quot;acolhedor&quot;, &quot;didático&quot;, &quot;contemporâneo&quot;],
-  &quot;rendering&quot;: &quot;ilustração editorial com volumes simples&quot;,
-  &quot;avoid&quot;: [
-    &quot;copiar os objetos da imagem de estilo&quot;,
-    &quot;adicionar texto ou logotipos não solicitados&quot;,
-    &quot;mudar a quantidade de pessoas ou objetos principais da imagem de conteúdo&quot;
-  ]
-}
-</code></pre>
-<h3 id="fluxo-de-trabalho">Fluxo de trabalho</h3>
-<ol>
-<li>Escolha uma imagem de estilo e uma imagem de conteúdo. Identifique qual informação cada uma deve fornecer.</li>
-<li>Peça a um modelo com capacidade de analisar imagens para descrever somente as características visuais transferíveis da imagem de estilo em JSON. Não peça que copie os objetos ou a cena dessa referência.</li>
-<li>Revise a ficha: troque termos vagos por descrições observáveis, como “luz difusa” ou “textura de papel”, e remova características que não deseja aplicar.</li>
-<li>Envie a imagem de conteúdo junto da ficha e explique o que precisa permanecer reconhecível.</li>
-<li>Gere uma primeira versão, compare com as duas referências e ajuste a ficha ou as instruções em etapas.</li>
-<li>Confira se a ferramenta alterou acidentalmente elementos importantes, como quantidade de pessoas, objetos, detalhes clínicos, rótulos ou identidade visual.</li>
-</ol>
-<h3 id="prompt-para-aplicar-a-ficha">Prompt para aplicar a ficha</h3>
-<blockquote>
-<p>Use a imagem 1 somente como referência de estilo e a imagem 2 como referência de conteúdo. Aplique à imagem 2 as características descritas neste JSON: [inserir a ficha]. Preserve o assunto principal, a quantidade de pessoas e objetos importantes e a leitura geral da imagem 2. Não copie a cena, os objetos ou a composição específica da imagem 1. Não acrescente texto nem logotipos. Gere uma nova interpretação visual e informe quais aspectos do conteúdo podem ter sido alterados.</p>
-</blockquote>
-<p>Ferramentas de geração de imagem podem aceitar imagens junto com instruções em texto e realizar transformações de estilo; a documentação do Gemini, por exemplo, apresenta um fluxo de transferência de estilo com preservação da composição quando isso é pedido. O comportamento varia conforme a ferramenta, então o resultado precisa ser avaliado. <a href="https://ai.google.dev/gemini-api/docs/image-generation">Documentação oficial de geração e edição de imagens do Gemini</a></p>
-<h3 id="o-que-avaliar-no-resultado">O que avaliar no resultado</h3>
-<ul>
-<li>O estilo visual da referência foi percebido (paleta, iluminação, textura, contraste e tratamento)?</li>
-<li>O conteúdo importante da segunda imagem continua reconhecível?</li>
-<li>Elementos da imagem de estilo foram copiados por engano?</li>
-<li>O resultado acrescentou palavras, símbolos ou objetos que não foram pedidos?</li>
-<li>Quais características do JSON parecem ter sido obedecidas ou ignoradas?</li>
-</ul>
-<p><strong>Importante:</strong> esse processo não garante uma transferência perfeita. O JSON deixa a intenção mais explícita e permite editar a descrição por partes, mas o modelo de imagem ainda interpreta as instruções de forma probabilística. Para avaliar a técnica mencionada no vídeo, vale testar a mesma imagem de conteúdo com e sem a ficha JSON e comparar os resultados.</p>
-<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-3"><h2>2. Usar a identidade visual da marca</h2>
+</section><div class="lessons"><article id="secao-2"><h2>1. Dar outro estilo a uma foto usando JSON</h2>
+<p>Você tem uma foto de uma mesa de trabalho e quer transformá-la em uma ilustração para abrir uma apresentação. Encontrou uma imagem com as cores e a textura que gostaria de usar. Neste exemplo, a IA descreve esse estilo em JSON e depois usa a descrição para transformar sua foto.</p>
+<p>Ao final, você terá uma nova imagem e uma ficha de estilo que poderá reutilizar em outras fotos. Se quiser experimentar, siga as etapas abaixo na ordem.</p>
+<h3>Antes de começar</h3>
+<p>Separe duas imagens no seu computador. Dê a elas nomes fáceis de reconhecer:</p>
+<ul><li><b>referencia-estilo</b> — uma ilustração cuja aparência você gosta. Pode ser, por exemplo, uma aquarela com tons suaves.</li><li><b>minha-foto</b> — a foto que você quer transformar. Para um primeiro teste, uma foto de uma mesa, de um objeto ou de uma paisagem facilita a comparação.</li></ul>
+<p>Abra uma ferramenta de IA que consiga analisar imagens e gerar uma nova imagem a partir de uma foto anexada. Confira se a geração de imagens está disponível na sua conta. Você pode escolher uma ferramenta nos <a href="#ferramentas">links deste guia</a>.</p>
+<h3>Passo 1 — Peça a descrição do estilo</h3>
+<p>Comece uma conversa e anexe <b>somente referencia-estilo</b>. Copie o pedido abaixo e envie.</p>
+<blockquote><p>Analise a aparência da imagem anexada e descreva seu estilo para que eu possa aplicá-lo a outras fotos. Responda com um JSON válido contendo os campos paleta_de_cores, tecnica_visual, textura, iluminacao, contraste, contornos e detalhes_incertos. Use descrições observáveis, como “tons pastel”, “pinceladas de aquarela” ou “luz difusa”. Nos campos de estilo, descreva apenas características visuais transferíveis. Registre qualquer característica que você não consiga identificar com segurança em detalhes_incertos. Quero reutilizar a aparência em outro assunto.</p></blockquote>
+<p><b>O que você deve receber</b> — um texto entre chaves, com os campos preenchidos a partir da imagem enviada. Isso é a ficha JSON. Leia os valores e compare com a referência. Por exemplo, se a imagem parece aquarela e a ficha diz “fotografia realista”, peça a correção antes de seguir.</p>
+<p>Copie a ficha inteira, desde a primeira chave até a última. Você vai usá-la no próximo passo.</p>
+<h3>Passo 2 — Envie sua foto junto da ficha</h3>
+<p>Abra <b>uma nova conversa</b> na ferramenta de geração de imagens. Anexe <b>minha-foto</b>. Cole o pedido abaixo, substituindo o trecho entre colchetes pela ficha copiada no passo 1.</p>
+<blockquote><p>Transforme a foto anexada em uma nova imagem usando o estilo descrito neste JSON. Preserve os objetos principais, sua quantidade e a organização geral da foto. Aplique a paleta, a técnica visual, a textura, a iluminação, o contraste e os contornos descritos na ficha. Mantenha a proporção da foto. Não acrescente textos ou logotipos. Gere a imagem.</p><p>Ficha de estilo:<br>[COLE AQUI O JSON COMPLETO DO PASSO 1]</p></blockquote>
+<p><b>O que você deve receber</b> — uma nova imagem do assunto da sua foto com o tratamento visual descrito na ficha. No exemplo, a mesa continua reconhecível e ganha a aparência de aquarela. Se a ferramenta responder apenas com texto, confirme que a opção de gerar imagens está ativa antes de reenviar.</p>
+<h3>Passo 3 — Confira o resultado com as duas imagens</h3>
+<p>Abra a referência, a foto original e a imagem gerada. Compare:</p>
+<ul><li><b>Aparência</b> — as cores, a textura e os contornos lembram a referência?</li><li><b>Assunto</b> — os objetos importantes da foto continuam presentes? Algum objeto mudou ou desapareceu?</li><li><b>Uso</b> — a imagem ficou adequada para a apresentação em que você pretende usá-la?</li></ul>
+<p>A geração pode alterar detalhes. Observe especialmente aquilo que precisa continuar reconhecível para o seu uso.</p>
+<h3>Passo 4 — Ajuste uma escolha e tente novamente</h3>
+<p>Se as cores ficaram fortes demais, por exemplo, edite apenas o campo paleta_de_cores da ficha para pedir tons mais suaves. Reenvie a <b>foto original</b> com o mesmo pedido do passo 2 e o JSON atualizado. Compare essa nova versão com a primeira.</p>
+<p>Quando gostar do resultado, baixe a imagem e guarde a ficha. Para criar outra ilustração com a mesma linguagem visual, repita o passo 2 com uma nova foto e o mesmo JSON. Confira cada resultado para decidir se a série ficou coerente.</p>
+<details><summary>Por que usar JSON neste processo?</summary><p>Os campos deixam as escolhas visuais organizadas e fáceis de editar. Você pode mudar só a paleta ou a textura e reaproveitar o restante da descrição. A ferramenta interpreta essas instruções durante a geração, por isso a semelhança deve ser conferida nas imagens produzidas.</p></details>
+<p><a href="#topo">Voltar ao sumário ↑</a></p></article><article id="secao-3"><h2>2. Usar a identidade visual da marca</h2>
 <h3 id="objetivo">Objetivo</h3>
 <p>Usar um arquivo de identidade visual — como manual em PDF, apresentação de referência, arquivo de logotipo ou descrição escrita — para orientar a criação de peças diferentes sem perder a coerência da marca.</p>
 <p>A IA deve consultar o material fornecido como fonte. Se uma regra não estiver clara ou não aparecer no arquivo, deve sinalizar a dúvida em vez de inventar uma cor, uma fonte, uma versão do logotipo ou uma aplicação.</p>
