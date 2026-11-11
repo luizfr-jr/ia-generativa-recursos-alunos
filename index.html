@@ -28,7 +28,7 @@ h1 span{color:#ff7847}.subtitle{position:relative;z-index:1;color:#d1deec;font-s
 nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{color:#144e79}.lessons article{padding:clamp(20px,5vw,58px);max-width:850px;margin:auto;line-height:1.65;overflow-wrap:anywhere;border-top:1px solid var(--line)}article h2{font-size:clamp(26px,4vw,37px);line-height:1.15;color:var(--navy)}article h3{margin:2em 0 .5em;line-height:1.25;color:var(--blue)}pre{background:#10253c;color:#fff;padding:16px;overflow:auto;border-radius:9px;font-size:.86rem}blockquote{background:#f0f5fa;border-left:4px solid #cf542a;margin:1em 0;padding:8px 18px}button{border:1px solid #68829a;border-radius:6px;background:white;color:#103657;padding:7px 12px;cursor:pointer}article pre+button{margin-top:-8px}article :focus-visible,a:focus-visible{outline:3px solid #c8572b}</style></head>
 <body id="topo"><main class="poster">
 <header class="hero"><div class="brand"><i></i> UFN Digital · Pós em Desenvolvimento e Soluções com IA</div><h1>Material de apoio<br><span>IA generativa para profissionais</span></h1><p class="subtitle">Todo o material é opcional e não vale nota. Consulte os links e exemplos na ordem que preferir. Se quiser experimentar um prompt, use um tema do seu interesse. Não há entrega.</p><div class="course">TRILHA FORMATIVA 1 · APLICAÇÕES MULTIMODAIS</div></header>
-<section class="content"><nav aria-label="Sumário"><h2 class="section-title">Temas para consulta</h2><div class="grid"><a class="card" href="#secao-2"><b>1. Dar outro estilo a uma foto usando JSON</b><span class="desc">Transforme uma foto em ilustração e guarde a ficha de estilo para usar em outras imagens. Siga o passo a passo com dois prompts prontos.</span></a><a class="card" href="#secao-3"><b>2. Usar a identidade visual da marca</b><span class="desc">Do banner à apresentação, o que faz uma marca ser reconhecida? Use um manual de marca para experimentar os dois formatos.</span></a><a class="card" href="#secao-4"><b>3. Padronizar slides no Gemini Notebook</b><span class="desc">Experimente o mesmo guia de estilo em duas aulas diferentes e descubra quais escolhas visuais se repetem nos slides.</span></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
+<section class="content"><nav aria-label="Sumário"><h2 class="section-title">Temas para consulta</h2><div class="grid"><a class="card" href="#secao-2"><b>1. Dar outro estilo a uma foto usando JSON</b><span class="desc">Transforme uma foto em ilustração e guarde a ficha de estilo para usar em outras imagens. Siga o passo a passo com dois prompts prontos.</span></a><a class="card" href="#secao-3"><b>2. Usar a identidade visual da marca</b><span class="desc">Do banner à apresentação, o que faz uma marca ser reconhecida? Use um manual de marca para experimentar os dois formatos.</span></a><a class="card" href="#secao-4"><b>3. Orientar o visual dos slides no Gemini Notebook</b><span class="desc">Descreva o visual desejado em JSON, gere os slides e confira quais orientações foram atendidas.</span></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
 <div class="group"><h2 class="section-title">Comece por aqui</h2><a class="mainlink" href="https://luizfr-jr.github.io/meu-site-ia/" target="_blank" rel="noopener"><span><strong>Links de IAs para Alunos</strong><small>Página da disciplina com uma seleção de ferramentas de inteligência artificial.</small></span><b class="arrow">↗</b></a></div>
 <div class="group"><h2 class="section-title">Explore diretórios</h2><div class="grid">
 <a class="card" href="https://huggingface.co/spaces" target="_blank" rel="noopener"><span class="cardhead"><span class="name">Hugging Face Spaces</span><b class="arrow">↗</b></span><span class="desc">Experimente aplicações de IA criadas pela comunidade, direto no navegador.</span></a>
@@ -128,9 +128,9 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <li>Faça a auditoria com o prompt da Etapa 3 e corrija as peças.</li>
 </ol>
 <p><strong>Pergunta para reflexão:</strong> como podemos manter uma identidade visual consistente em formatos diferentes sem obrigar todos os materiais a terem o mesmo layout?</p>
-<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-4"><h2>3. Padronizar slides no Gemini Notebook</h2><p>O Slide Deck está disponível apenas para usuários maiores de 18 anos e exige acesso de edição ao caderno.</p>
+<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-4"><h2>3. Orientar o visual dos slides no Gemini Notebook</h2><p>O Slide Deck está disponível apenas para usuários maiores de 18 anos e exige acesso de edição ao caderno.</p>
 <h3 id="objetivo-1">Objetivo</h3>
-<p>Testar se uma ficha de identidade visual em JSON ajuda a manter uma linguagem visual coerente entre apresentações criadas no Studio do Gemini Notebook. O conteúdo deve vir das fontes do caderno; o JSON orienta a forma visual. O resultado é uma orientação para o modelo, não uma regra de diagramação executada com precisão garantida.</p>
+<p>Usar uma ficha JSON para comunicar as preferências visuais de uma apresentação e revisar o resultado. Em gerações diferentes, fundos, fontes, composição e ilustrações podem variar mesmo com a mesma ficha. Para criar uma série com identidade visual repetível, use um modelo de apresentação com layouts definidos no editor em que fará a finalização.</p>
 <h3 id="prepare-um-design-system-reutilizavel">1. Prepare um Design System reutilizável</h3>
 <p>O exemplo abaixo é uma ficha que você pode adaptar. As cores são demonstrativas; antes de usar em materiais institucionais, substitua-as pelas cores oficiais da disciplina ou da instituição.</p>
 <pre><code class="language-json">{
@@ -177,7 +177,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <li>Selecione o formato (slides para apresentar ou deck detalhado), o idioma, a extensão e as fontes apropriadas.</li>
 <li>No campo de descrição da apresentação, escreva o objetivo e o público e cole o Design System em JSON. Esse é o único campo de texto livre da personalização.</li>
 <li>Ative <strong>Review outline notes</strong> (revisão do roteiro) e selecione <strong>Generate now</strong> (Gerar agora). Atenção: se escolher <strong>Generate later</strong>, a geração é agendada sem a etapa de roteiro. Quando o roteiro ficar pronto, selecione <strong>Review</strong> ao lado dele, envie todos os seus ajustes de uma vez e selecione <strong>Proceed</strong>. Depois do <strong>Proceed</strong>, não é possível refinar o roteiro.</li>
-<li>Para uma segunda aula, use novamente o mesmo JSON, mas altere tema, público ou objetivo conforme necessário.</li>
+<li>Confira a apresentação gerada antes de reutilizar a ficha em outro tema. Ajuste as regras que ficaram vagas e registre as diferenças que exigem edição.</li>
 </ol>
 <p><strong>Prompt para testar:</strong></p>
 <blockquote>
@@ -185,25 +185,25 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <p>[Cole aqui o JSON do Design System.]</p>
 </blockquote><p>Dica: o campo de descrição pode ter limite de caracteres. Se o texto for cortado, cole uma versão compacta do JSON, sem quebras de linha e só com paleta, linguagem visual, hierarquia e regras.</p>
 <h3 id="compare-e-verifique">4. Compare e verifique</h3>
-<p>Para testar se a ficha ajuda, crie duas versões a partir do mesmo conteúdo e formato: uma com a instrução padrão e outra com o JSON. Depois, use a mesma ficha em uma apresentação sobre outro tema. Compare os resultados lado a lado.</p>
+<p>Abra a apresentação gerada e compare cada slide com a ficha JSON. Confira a paleta, a hierarquia dos títulos, a densidade do texto e o estilo das ilustrações. Anote quais escolhas precisam de correção.</p>
 <ul>
-<li>A paleta e a linguagem gráfica permanecem reconhecíveis entre as apresentações?</li>
-<li>A hierarquia visual é semelhante, mesmo quando o layout dos slides varia?</li>
+<li>A paleta e a linguagem gráfica seguem as orientações da ficha?</li>
+<li>Os títulos e o texto têm uma hierarquia clara ao longo da apresentação?</li>
 <li>As ilustrações ajudam a explicar o conteúdo ou são apenas decorativas?</li>
 <li>O texto factual está sustentado pelas fontes selecionadas?</li>
 <li>Surgiram logotipos, dados, cores ou elementos que não foram fornecidos?</li>
 <li>Quais regras do JSON foram seguidas, parcialmente seguidas ou ignoradas?</li>
 </ul>
-<p>Se quiser comparar os resultados, escolha um slide de cada versão. Se uma cor exata, uma fonte específica ou o uso correto de um logotipo for obrigatório, confira o arquivo exportado e finalize esses elementos em um editor de apresentações com os ativos oficiais. Apresentações geradas por IA podem conter falhas visuais ou factuais; revise o material antes de usar ou compartilhar. <a href="https://support.google.com/gemininotebook/answer/16757456?hl=pt-BR">Ajuda oficial: gerar e personalizar Slide Decks</a> · <a href="https://support.google.com/gemini/answer/16972047?hl=pt-BR">Ajuda oficial: notebooks no app Gemini (instruções do caderno)</a></p>
+<p>Para uma série de aulas, prepare um modelo com fontes, cores e layouts no editor de apresentações e use-o na finalização dos conteúdos. Se uma cor exata, uma fonte específica ou o uso correto de um logotipo for obrigatório, confira o arquivo exportado e finalize esses elementos em um editor de apresentações com os ativos oficiais. Apresentações geradas por IA podem conter falhas visuais ou factuais; revise o material antes de usar ou compartilhar. <a href="https://support.google.com/gemininotebook/answer/16757456?hl=pt-BR">Ajuda oficial: gerar e personalizar Slide Decks</a> · <a href="https://support.google.com/gemini/answer/16972047?hl=pt-BR">Ajuda oficial: notebooks no app Gemini (instruções do caderno)</a></p>
 <p>Para ajustar slides depois de gerados, use o botão <strong>Revise</strong> no topo do deck e escreva instruções por slide, agrupadas em <strong>Pending Changes</strong>, e depois <strong>Generate revised deck</strong>. Reúna todas as correções antes de gerar, pois cada revisão cria um deck novo e há limite de cota. Atenção: nas revisões, as fontes do caderno não são consideradas. Para baixar o deck, use o menu de três pontos: PDF (.pdf) ou PowerPoint (.pptx).</p><h3 id="atividade-pratica-10-a-15-minutos">Se quiser experimentar (10 a 15 minutos)</h3>
 <ol>
 <li>Escolha fontes de um tema que já esteja no caderno.</li>
-<li>Gere uma primeira apresentação com as opções padrão e guarde o resultado.</li>
-<li>Gere uma segunda versão do mesmo tema, incluindo o JSON no prompt de personalização.</li>
-<li>Gere uma apresentação de outro tema usando a mesma ficha.</li>
-<li>Compare as três versões pela paleta, hierarquia, linguagem gráfica, legibilidade e fidelidade às fontes. Observe quais escolhas visuais se repetem e quais variam.</li>
+<li>Adapte a ficha JSON ao visual que você quer e inclua-a no prompt de personalização.</li>
+<li>Gere uma apresentação e compare os slides com a ficha.</li>
+<li>Escolha uma diferença concreta e peça uma revisão do slide correspondente.</li>
+<li>Para usar o material em uma série de aulas, finalize o conteúdo no mesmo modelo de apresentação.</li>
 </ol>
-<p><strong>O que observar:</strong> o JSON pode tornar as instruções de estilo mais claras e reutilizáveis. Ao comparar os slides, você pode observar em que medida o Gemini Notebook mantém a consistência e quais ajustes ainda exigem revisão humana.</p>
+<p><strong>O que observar:</strong> a ficha ajuda a explicitar preferências. Observe em quais aspectos a geração atende ao pedido e quanto trabalho de revisão e finalização será necessário para o seu uso.</p>
 <p><strong>Pergunta para reflexão:</strong> que partes da identidade visual podem ser descritas bem em JSON e quais precisam ser ajustadas manualmente no arquivo final?</p>
 
 
