@@ -31,7 +31,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <section class="content"><nav aria-label="Sumário"><h2 class="section-title">Temas para consulta</h2><div class="grid"><a class="card" href="#secao-2"><b>1. Dar outro estilo a uma foto usando JSON</b><span class="desc">Transforme uma foto em ilustração e guarde a ficha de estilo para usar em outras imagens. Siga o passo a passo com dois prompts prontos.</span></a><a class="card" href="#secao-3"><b>2. Usar a identidade visual da marca</b><span class="desc">Do banner à apresentação, o que faz uma marca ser reconhecida? Use um manual de marca para experimentar os dois formatos.</span></a><a class="card" href="#secao-4"><b>3. Padronizar slides no Gemini Notebook</b><span class="desc">Experimente o mesmo guia de estilo em duas aulas diferentes e descubra quais escolhas visuais se repetem nos slides.</span></a></div><p><a href="#ferramentas">Consultar as ferramentas da aula ↓</a></p></nav><div id="ferramentas"></div>
 <div class="group"><h2 class="section-title">Comece por aqui</h2><a class="mainlink" href="https://luizfr-jr.github.io/meu-site-ia/" target="_blank" rel="noopener"><span><strong>Links de IAs para Alunos</strong><small>Página da disciplina com uma seleção de ferramentas de inteligência artificial.</small></span><b class="arrow">↗</b></a></div>
 <div class="group"><h2 class="section-title">Explore diretórios</h2><div class="grid">
-<a class="card" href="https://huggingface.co/spaces?category=language-translation" target="_blank" rel="noopener"><span class="cardhead"><span class="name">Hugging Face Spaces</span><b class="arrow">↗</b></span><span class="desc">Experimente aplicações de IA criadas pela comunidade, direto no navegador.</span></a>
+<a class="card" href="https://huggingface.co/spaces" target="_blank" rel="noopener"><span class="cardhead"><span class="name">Hugging Face Spaces</span><b class="arrow">↗</b></span><span class="desc">Experimente aplicações de IA criadas pela comunidade, direto no navegador.</span></a>
 <a class="card" href="https://www.aixploria.com/en/" target="_blank" rel="noopener"><span class="cardhead"><span class="name">AIxploria</span><b class="arrow">↗</b></span><span class="desc">Diretório para descobrir ferramentas de IA organizadas por categoria.</span></a>
 </div></div>
 <div class="group"><h2 class="section-title">Crie e experimente</h2><div class="grid">
@@ -51,7 +51,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <p>Ao final, você terá uma nova imagem e uma ficha de estilo que poderá reutilizar em outras fotos. Se quiser experimentar, siga as etapas abaixo na ordem.</p>
 <h3>Antes de começar</h3>
 <p>Separe duas imagens no seu computador. Dê a elas nomes fáceis de reconhecer:</p>
-<ul><li><b>referencia-estilo</b> — uma ilustração cuja aparência você gosta. Pode ser, por exemplo, uma aquarela com tons suaves.</li><li><b>minha-foto</b> — a foto que você quer transformar. Para um primeiro teste, uma foto de uma mesa, de um objeto ou de uma paisagem facilita a comparação.</li></ul>
+<ul><li><b>referencia-estilo</b> — uma ilustração cuja aparência você gosta. Pode ser, por exemplo, uma aquarela com tons suaves.</li><li><b>minha-foto</b> — a foto que você quer transformar. Para um primeiro teste, uma foto de uma mesa, de um objeto ou de uma paisagem facilita a comparação. Use fotos suas ou que você tenha autorização para usar. Evite subir fotos de outras pessoas, especialmente rostos.</li></ul>
 <p>Abra uma ferramenta de IA que consiga analisar imagens e gerar uma nova imagem a partir de uma foto anexada. Confira se a geração de imagens está disponível na sua conta. Você pode escolher uma ferramenta nos <a href="#ferramentas">links deste guia</a>.</p>
 <h3>Passo 1 — Peça a descrição do estilo</h3>
 <p>Comece uma conversa e anexe <b>somente referencia-estilo</b>. Copie o pedido abaixo e envie.</p>
@@ -64,7 +64,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <p><b>O que você deve receber</b> — uma nova imagem do assunto da sua foto com o tratamento visual descrito na ficha. No exemplo, a mesa continua reconhecível e ganha a aparência de aquarela. Se a ferramenta responder apenas com texto, confirme que a opção de gerar imagens está ativa antes de reenviar.</p>
 <h3>Passo 3 — Confira o resultado com as duas imagens</h3>
 <p>Abra a referência, a foto original e a imagem gerada. Compare:</p>
-<ul><li><b>Aparência</b> — as cores, a textura e os contornos lembram a referência?</li><li><b>Assunto</b> — os objetos importantes da foto continuam presentes? Algum objeto mudou ou desapareceu?</li><li><b>Uso</b> — a imagem ficou adequada para a apresentação em que você pretende usá-la?</li></ul>
+<ul><li><b>Aparência</b> — as cores, a textura e os contornos lembram a referência?</li><li><b>Assunto</b> — os objetos importantes da foto continuam presentes? Algum objeto mudou ou desapareceu?</li><li><strong>Proporção</strong> — a imagem manteve o formato da foto original? Algumas ferramentas só geram em proporções fixas e podem ignorar esse pedido. Se isso acontecer, recorte ou ajuste a imagem depois.</li><li><b>Uso</b> — a imagem ficou adequada para a apresentação em que você pretende usá-la?</li></ul>
 <p>A geração pode alterar detalhes. Observe especialmente aquilo que precisa continuar reconhecível para o seu uso.</p>
 <h3>Passo 4 — Ajuste uma escolha e tente novamente</h3>
 <p>Se as cores ficaram fortes demais, por exemplo, edite apenas o campo paleta_de_cores da ficha para pedir tons mais suaves. Reenvie a <b>foto original</b> com o mesmo pedido do passo 2 e o JSON atualizado. Compare essa nova versão com a primeira.</p>
@@ -93,9 +93,9 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <p>Revise a ficha e corrija qualquer leitura equivocada. Guarde-a junto dos arquivos oficiais; ela será a referência comum para os próximos pedidos. O resumo ajuda a reutilizar as regras, mas não substitui o manual original quando houver dúvida.</p>
 <h3 id="etapa-2-teste-a-ficha-em-pecas-diferentes">Etapa 2 — Teste a ficha em peças diferentes</h3>
 <p>Substitua os campos entre colchetes pelas informações da peça que você quer criar. Anexe novamente a ficha, o manual e o arquivo oficial do logotipo ou dos elementos gráficos que a peça exigir.</p>
-<h4 id="prompt-a-banner">Prompt A — Banner</h4>
+<p>Antes de usar os prompts: defina o que você espera receber. Um modelo de texto devolve uma descrição do layout (ou um código HTML); um gerador de imagem devolve uma imagem. Geradores de imagem costumam redesenhar logotipos e distorcer textos. Por isso, trate a saída como proposta de composição e insira o logotipo oficial e os textos finais depois, em um editor de design ou de apresentação.</p><h4 id="prompt-a-banner">Prompt A — Banner</h4>
 <blockquote>
-<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, crie uma proposta de banner para [canal ou local de publicação].</p>
+<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, crie uma proposta de banner para [canal ou local de publicação], entregue como [imagem / descrição detalhada do layout / código HTML].</p>
 <p><strong>Objetivo:</strong> [o que a peça deve comunicar].<br />
 <strong>Público:</strong> [para quem].<br />
 <strong>Texto obrigatório:</strong> [título, data, chamada ou link].<br />
@@ -105,7 +105,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 </blockquote>
 <h4 id="prompt-b-apresentacao">Prompt B — Apresentação</h4>
 <blockquote>
-<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, planeje uma apresentação de [número] slides sobre [tema], para [público], com o objetivo de <a href="#objetivo-1">objetivo</a>.</p>
+<p>Usando a ficha de identidade visual e os arquivos oficiais anexados, planeje uma apresentação de [número] slides sobre [tema], para [público], com o objetivo de &#91;objetivo&#93;.</p>
 <p>Primeiro, apresente o roteiro slide a slide com título, mensagem principal e conteúdo essencial. Depois, proponha o sistema visual: capa, layouts de conteúdo, uso de imagens, gráficos, cores e tipografia, sempre de acordo com o manual. Mantenha consistência entre os slides e preserve boa legibilidade. Não invente dados nem altere o logotipo. Sinalize informações que estejam faltando. Ao final, faça uma checagem do roteiro e do sistema visual contra as regras da ficha.</p>
 </blockquote>
 <h4 id="prompt-c-outra-peca-cartaz-folheto-ou-publicacao-social">Prompt C — Outra peça (cartaz, folheto ou publicação social)</h4>
@@ -128,7 +128,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <li>Faça a auditoria com o prompt da Etapa 3 e corrija as peças.</li>
 </ol>
 <p><strong>Pergunta para reflexão:</strong> como podemos manter uma identidade visual consistente em formatos diferentes sem obrigar todos os materiais a terem o mesmo layout?</p>
-<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-4"><h2>3. Padronizar slides no Gemini Notebook</h2>
+<a href="#topo">Voltar ao sumário ↑</a></article><article id="secao-4"><h2>3. Padronizar slides no Gemini Notebook</h2><p>O Slide Deck está disponível apenas para usuários maiores de 18 anos e exige acesso de edição ao caderno.</p>
 <h3 id="objetivo-1">Objetivo</h3>
 <p>Testar se uma ficha de identidade visual em JSON ajuda a manter uma linguagem visual coerente entre apresentações criadas no Studio do Gemini Notebook. O conteúdo deve vir das fontes do caderno; o JSON orienta a forma visual. O resultado é uma orientação para o modelo, não uma regra de diagramação executada com precisão garantida.</p>
 <h3 id="prepare-um-design-system-reutilizavel">1. Prepare um Design System reutilizável</h3>
@@ -165,7 +165,7 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 </code></pre>
 <p>Guarde a mesma ficha para reutilizá-la. Se preferir deixá-la disponível no caderno, cole-a nas instruções do caderno, quando essa opção estiver disponível, ou salve-a em um arquivo Markdown e adicione-o como fonte. Para gerar cada apresentação, inclua também a ficha no prompt de personalização do Slide Deck: isso torna explícita a referência visual daquela geração.</p>
 <h3 id="configure-as-instrucoes-do-caderno">2. Configure as instruções do caderno</h3>
-<p>No Gemini Notebook, procure as configurações ou instruções do caderno e adicione uma orientação permanente como esta:</p>
+<p>No Gemini Notebook, use <strong>Configure Chat</strong> (painel Chat) para definir o estilo das respostas do chat: Padrão, Guia de aprendizagem ou Personalizado. As instruções personalizadas do caderno ficam em <strong>Notebook settings</strong> (Configurações do caderno) no app Gemini e são compartilhadas entre o Gemini e o Gemini Notebook. Adicione uma orientação permanente como esta:</p>
 <blockquote>
 <p>Atue como designer instrucional. Ao preparar apresentações, use as fontes do caderno para o conteúdo e consulte o Design System em JSON fornecido como referência visual. Mantenha uma hierarquia clara, texto conciso, bom contraste e consistência de paleta e linguagem gráfica. Não invente logotipos nem dados. Se alguma regra visual não puder ser aplicada ou não estiver clara, sinalize isso.</p>
 </blockquote>
@@ -175,16 +175,15 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <li>Abra o caderno que contém as fontes da aula ou do módulo.</li>
 <li>No painel <strong>Studio</strong>, escolha <strong>Slide Deck</strong> e abra a personalização pelo ícone de lápis.</li>
 <li>Selecione o formato (slides para apresentar ou deck detalhado), o idioma, a extensão e as fontes apropriadas.</li>
-<li>Escreva o objetivo e o público da apresentação. Cole o Design System em JSON no campo de instrução visual.</li>
-<li>Se a interface oferecer revisão do roteiro ou das notas antes da renderização, revise a sequência e corrija o conteúdo antes de gerar os slides.</li>
+<li>No campo de descrição da apresentação, escreva o objetivo e o público e cole o Design System em JSON. Esse é o único campo de texto livre da personalização.</li>
+<li>Ative <strong>Review outline notes</strong> (revisão do roteiro) e selecione <strong>Generate now</strong> (Gerar agora). Atenção: se escolher <strong>Generate later</strong>, a geração é agendada sem a etapa de roteiro. Quando o roteiro ficar pronto, selecione <strong>Review</strong> ao lado dele, envie todos os seus ajustes de uma vez e selecione <strong>Proceed</strong>. Depois do <strong>Proceed</strong>, não é possível refinar o roteiro.</li>
 <li>Para uma segunda aula, use novamente o mesmo JSON, mas altere tema, público ou objetivo conforme necessário.</li>
 </ol>
 <p><strong>Prompt para testar:</strong></p>
 <blockquote>
-<p>Crie um Slide Deck sobre [tema], para [público], com o objetivo de <a href="#objetivo-1">objetivo</a>. Baseie as afirmações nas fontes selecionadas do caderno e não acrescente dados sem suporte. Aplique o Design System abaixo como referência visual para paleta, hierarquia, composição e linguagem gráfica. Mantenha uma mensagem principal por slide, texto legível e diagramas pertinentes. Não invente logotipos ou selos.</p>
+<p>Crie um Slide Deck sobre [tema], para [público], com o objetivo de &#91;objetivo&#93;. Baseie as afirmações nas fontes selecionadas do caderno e não acrescente dados sem suporte. Aplique o Design System abaixo como referência visual para paleta, hierarquia, composição e linguagem gráfica. Mantenha uma mensagem principal por slide, texto legível e diagramas pertinentes. Não invente logotipos ou selos.</p>
 <p>[Cole aqui o JSON do Design System.]</p>
-<p>Antes de gerar, proponha uma sequência de slides com título e mensagem principal de cada um, se a opção de revisão estiver disponível.</p>
-</blockquote>
+</blockquote><p>Dica: o campo de descrição pode ter limite de caracteres. Se o texto for cortado, cole uma versão compacta do JSON, sem quebras de linha e só com paleta, linguagem visual, hierarquia e regras.</p>
 <h3 id="compare-e-verifique">4. Compare e verifique</h3>
 <p>Para testar se a ficha ajuda, crie duas versões a partir do mesmo conteúdo e formato: uma com a instrução padrão e outra com o JSON. Depois, use a mesma ficha em uma apresentação sobre outro tema. Compare os resultados lado a lado.</p>
 <ul>
@@ -195,8 +194,8 @@ nav{margin-bottom:2.5rem}nav .card{min-height:0;padding:18px}nav a,article a{col
 <li>Surgiram logotipos, dados, cores ou elementos que não foram fornecidos?</li>
 <li>Quais regras do JSON foram seguidas, parcialmente seguidas ou ignoradas?</li>
 </ul>
-<p>Se quiser comparar os resultados, escolha um slide de cada versão. Se uma cor exata, uma fonte específica ou o uso correto de um logotipo for obrigatório, confira o arquivo exportado e finalize esses elementos em um editor de apresentações com os ativos oficiais. Apresentações geradas por IA podem conter falhas visuais ou factuais; revise o material antes de usar ou compartilhar. <a href="https://support.google.com/gemininotebook/answer/16757456?hl=pt-BR">Ajuda oficial: gerar e personalizar Slide Decks</a> · <a href="https://support.google.com/gemini/answer/16972047?hl=pt-BR">Ajuda oficial: instruções e configurações de cadernos</a></p>
-<h3 id="atividade-pratica-10-a-15-minutos">Se quiser experimentar (10 a 15 minutos)</h3>
+<p>Se quiser comparar os resultados, escolha um slide de cada versão. Se uma cor exata, uma fonte específica ou o uso correto de um logotipo for obrigatório, confira o arquivo exportado e finalize esses elementos em um editor de apresentações com os ativos oficiais. Apresentações geradas por IA podem conter falhas visuais ou factuais; revise o material antes de usar ou compartilhar. <a href="https://support.google.com/gemininotebook/answer/16757456?hl=pt-BR">Ajuda oficial: gerar e personalizar Slide Decks</a> · <a href="https://support.google.com/gemini/answer/16972047?hl=pt-BR">Ajuda oficial: notebooks no app Gemini (instruções do caderno)</a></p>
+<p>Para ajustar slides depois de gerados, use o botão <strong>Revise</strong> no topo do deck e escreva instruções por slide, agrupadas em <strong>Pending Changes</strong>, e depois <strong>Generate revised deck</strong>. Reúna todas as correções antes de gerar, pois cada revisão cria um deck novo e há limite de cota. Atenção: nas revisões, as fontes do caderno não são consideradas. Para baixar o deck, use o menu de três pontos: PDF (.pdf) ou PowerPoint (.pptx).</p><h3 id="atividade-pratica-10-a-15-minutos">Se quiser experimentar (10 a 15 minutos)</h3>
 <ol>
 <li>Escolha fontes de um tema que já esteja no caderno.</li>
 <li>Gere uma primeira apresentação com as opções padrão e guarde o resultado.</li>
